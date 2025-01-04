@@ -1,5 +1,8 @@
 import Cocoa
 
+/**
+ * Learning about throwing errors and default parameters
+ */
 enum PasswordError: Error {
     case short,obvious
 }
@@ -21,7 +24,7 @@ func checkPassword(password:String) throws -> String {
     }
 }
 
-let passy: String = "12345"
+let passy: String = "asdjfkasdk;fa"
 
 do {
     // try must be written before all throwing functions.
@@ -31,5 +34,46 @@ do {
     print("Please use a longer password")
 } catch {
     print("There was an error")
+}
+
+/**
+ * Checkpoint 4 below
+ */
+
+enum numError: Error {
+    case outOfBounds, noRoot
+}
+
+func calcSqrt(findRootOf value:Int) throws -> Int{
+    
+    switch value {
+        case 1...10_000:
+            for i in 1...value{
+                if i * i == value && type(of: i) == Int.self {
+                    /// If i is the square root and is also an integer
+                    return i
+                }
+            }
+        // If the for loop never finds a solution then throw the error
+        throw numError.noRoot
+        default:
+            throw numError.outOfBounds
+    }
+        
+}
+
+/**
+ * Testing the solution
+ */
+
+var val:Int = 101
+do {
+    
+    let solution: Int = try calcSqrt(findRootOf: val)
+    print("The solution is \(solution)")
+} catch numError.noRoot {
+    print("The value \(val) doesn't have an integer square root")
+} catch {
+    print("There was an error bro...")
 }
 
