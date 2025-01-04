@@ -48,7 +48,7 @@ func calcSqrt(findRootOf value:Int) throws -> Int{
     
     switch value {
         case 1...10_000:
-            for i in 1...value{
+            for i in 1...100{ // realized that the largest i can be is 100!
                 if i * i == value && type(of: i) == Int.self {
                     /// If i is the square root and is also an integer
                     return i
@@ -66,7 +66,7 @@ func calcSqrt(findRootOf value:Int) throws -> Int{
  * Testing the solution
  */
 
-var val:Int = 101
+var val:Int = 25
 do {
     
     let solution: Int = try calcSqrt(findRootOf: val)
