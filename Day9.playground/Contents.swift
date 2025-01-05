@@ -210,6 +210,8 @@ doImportantWork {
 let luckyNumbers: [Int] = [7,4,38,21,16,15,12,33,31,49]
 
 var luckyArray = luckyNumbers.filter { $0.isMultiple(of: 2) == false }.sorted {$0 < $1}.map {"\($0) is lucky number"}
-print(luckyArray)
+for i in luckyArray {
+    print(i)
+}
 
 /// Finally finished the checkpoint... That was not easy
