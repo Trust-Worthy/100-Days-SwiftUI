@@ -193,3 +193,23 @@ doImportantWork {
 } third: {
     print("This is the third work")
 }
+
+/*************************************************************/
+// Checkpoint 5!! Let's do it
+/**
+ * Requirements:
+ *
+ * take given array...
+ * - filter out any numbers that are even
+ * - sort the array in ascending order
+ * - map the remaining integers to strings in the format "x is a lucky number"
+ * - print the resulting array, one item per line
+ *
+ * all while using closures to chain them together!
+ */
+let luckyNumbers: [Int] = [7,4,38,21,16,15,12,33,31,49]
+
+var luckyArray = luckyNumbers.filter { $0.isMultiple(of: 2) == false }.sorted {$0 < $1}.map {"\($0) is lucky number"}
+print(luckyArray)
+
+/// Finally finished the checkpoint... That was not easy
