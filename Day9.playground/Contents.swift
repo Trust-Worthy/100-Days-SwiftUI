@@ -136,4 +136,60 @@ print(jOnly)
 let upppercaseTeam: [String] = team.map {$0.uppercased()} /// map() can be converted. Doesn't have to return type of array you passed in
 print(upppercaseTeam)
 
+/********************************************/
+// Learning how to take in a function as a parameter in Swift
 
+
+func makeArray(size:Int, using generator:() -> Int ) -> [Int] {
+    var numbers = [Int]()
+    
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+    
+    return numbers
+}
+
+let rolls: [Int] = makeArray(size: 50) {
+    // Because the generator function doesn't take in any parameters in the func def of makeArray,
+    // I don't have to write anything else after the size parameter
+    // the code below use has to return a single integer
+    
+    Int.random(in:1...20)
+    
+    /**
+     * This trailing closure above is the same as...
+     *
+     *  func generateNumber() -> Int {
+     *      Int.random(in:1...20)
+     * }
+     * let newRolls = makeArray(size:50,using:generateNumber)
+     */
+}
+
+print(rolls)
+
+/// Make function take in multiple functions as parameters
+/// Write function that accepts 3 function parameters
+
+func doImportantWork(first: () -> Void,second: () -> Void, third: () -> Void) -> Void {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("doneee!!")
+}
+
+/// I didn't need any parentheses because all the parameters are functions...
+/// I can just use closure syntax for everything in this case
+/// pay attention to the 2nd function argument. It uses the colon ':'.
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
