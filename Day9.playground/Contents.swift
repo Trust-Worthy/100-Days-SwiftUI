@@ -61,9 +61,79 @@ func captainFirstSorted(name1: String,name2: String) -> Bool {
     return name1 < name2 /// regular alphabetical sort
 }
 
-let captainFirstTeam = team.sorted(by: captainFirstSorted)
+//let captainFirstTeam = team.sorted(by: captainFirstSorted)
+//
+//print(captainFirstTeam)
+
+/**
+ * Do the same thing as above but with a closure.
+ * This can be tough, but I can work through it by the power of the Holy Spirit
+ */
+
+/// Passing in a closure to the sorted function!
+let captainFirstTeam = team.sorted(by: { (name1: String, name2:String) -> Bool in
+    /**
+     * copied same code as above and put it in the closure
+     */
+    if name1 == "conner" {
+        return true // conner comes before everyone else
+    } else if name2 == "conner" {
+        /// ex: name1 = ben name2 = "conner"
+        /// No! name1 does not come before name2 because conner goes before everyone else
+        return false
+    }
+    
+    return name1 < name2 /// regular alphabetical sort
+})
 
 print(captainFirstTeam)
 
+/************************************************************/
+/// Learning about trailing closures now
+
+///Ahhh I get it closures are kinda like lambdas in python
+
+// Trailing closure syntax
+
+let sortedTrailing = team.sorted { a,b in
+    if a == "conner" {return true}
+    else if b == "conner" {return false}
+    
+    return a < b
+    
+    
+}
+
+// This is the completed trailing closure
+print(sortedTrailing)
+
+let reverseTeam = team.sorted {
+    return $0 > $1
+    /**
+     * team.sorted { $0,$1 in
+     * return $0 > $1
+     * This is a little more elaborate explanation of what's going on in this closure
+     */
+    /// everything after the 'in' keyword is apart of the closure. This helps with reading the code
+  /**
+   * Because retunr $0 > $1 is only 1 line ...
+   * Code can be reduced to
+   *
+   * let reverseTeam = team.sorted { $0 > $1 }
+   *
+   * That is hyper efficient
+   */
+    
+}
+print(reverseTeam)
+
+
+/// Find all the team players who's name begins with a lowercase j
+
+let jOnly:[String] = team.filter { $0.hasPrefix("j")} /// This is trailing closure. The hasPrefix will eval on every item of array
+print(jOnly)
+
+let upppercaseTeam: [String] = team.map {$0.uppercased()} /// map() can be converted. Doesn't have to return type of array you passed in
+print(upppercaseTeam)
 
 
