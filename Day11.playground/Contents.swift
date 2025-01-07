@@ -78,3 +78,43 @@ struct Employee {
     static let example = Employee(username: "useruseruser", password: "123412342")
 }
 
+/**
+ * Checkpoint 6: Structs
+ *
+ *  Create a struct to store information about a car. Include:
+ *  - Model -> I'm thinking make this static because it doesn't change
+ *  - Number of seats -> I'm thinking make this static because it doesn't change
+ *  - Current Gear -> Use a mutating function to validate the gear change and change it
+ *  - Don't allow invalid gears
+ */
+
+struct Car {
+    
+    enum Gears:CaseIterable {
+        case firstGear, secondGear, thirdGear, fourthGear,fithGear,sixthGear,seventhGear
+    }
+    
+    static let model: String = "Audi S4"
+    static let numSeats: Int = 5
+    
+    
+     var currentGear: Gears {
+        didSet {
+            print("Gear just changed!")
+        }
+    }
+    
+    init(startingGear: Gears) {
+        self.currentGear = startingGear
+    }
+    
+    mutating func changeGear (gear: Gears) -> Void {
+        
+        currentGear = gear
+        
+    }
+}
+
+var vroom = Car(startingGear: .fithGear)
+vroom.changeGear(gear: .fourthGear)
+
