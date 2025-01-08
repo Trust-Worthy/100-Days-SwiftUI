@@ -142,7 +142,81 @@ print(user.name)
 
 /// Classes don't need mutating keyword to change properties
 
+/// Deinitializers for classes
+/// Deinitailizers never have params or return data
+/// We never call deinitializers directly, the system does as needed
+/// Struct don't have deinitializers
 
+/// Example of a deinitializer being used when the last instance of class is destroyed
+class UserEx3 {
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
+        print("User \(id): I'm alive! ")
+    }
+    deinit { /// No parents
+        print("User \(id): I'm destroyed :(")
+    }
+}
+/// The classes will be initialized and deinitialized within the scope of this for loop
+/// deinitializer will be activated when the last class inistance is destroyed
+var users = [UserEx3]()
 
+for i in 1...3 {
+    let dude = UserEx3(id: i)
+   
+    print("User \(dude.id) is in control")
+    users.append(dude)
+    
+}
 
+print("Loop is done")
+users.removeAll()
+print("Array is clear")
 
+/// Checkpoint 7
+/// Requirements:
+/// Make a class hierarchy for animals
+/// Start with Animal. Add a legs property
+/// Create a dog child with a speak method
+/// Make a corgi , poodle , and subclss Dog.
+/// Make Cat an Animals subclass. add a speak method and a isTame boolean set with an initializer
+/// Make persion and lion subclasses of Cat
+
+class Animals {
+    var legs: Int
+    
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+class Dog:Animals {
+    
+    func speak(){
+        print("I'm a dog and I bark... woof woof")
+    }
+}
+
+class Corgi:Dog {
+}
+class Poodle:Dog {
+}
+
+class Cat:Animals {
+    var isTame: Bool
+    
+    init(isTame: Bool,legs:Int) {
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak(){
+        print("I'm a cat and I meow... MEOW MEOW MEOW")
+    }
+    
+}
+
+class Persian:Animals {}
+class Lion:Animals {}
