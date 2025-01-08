@@ -92,11 +92,14 @@ class Vehicle {
 class Car:Vehicle { /// If a child class doesn't have any initializers it will auto inherit the initializers from its parent
     let isConvertible: Bool
     
-    init(isElectric:Bool,isConvertible: Bool) {
+    init(isConvertible: Bool) {
         self.isConvertible = isConvertible
-        super.init(isElectric: isElectric) /// Must call parents initializers
+        super.init(isElectric: true) /// Must call parents initializers
     }
 }
 
-let teslaX = Car(isElectric: true, isConvertible: true)
+let teslaX = Car(isConvertible: true)
+
+/// How to copy classes
+
 
