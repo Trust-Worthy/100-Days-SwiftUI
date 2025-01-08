@@ -101,5 +101,31 @@ class Car:Vehicle { /// If a child class doesn't have any initializers it will a
 let teslaX = Car(isConvertible: true)
 
 /// How to copy classes
+/// All copies of a class instance all point to the same piece of data
+/// Changes to one copy change all of them
+/// Classes are reference types --> refer to other shared pot of data
+
+class User {
+    var username = "Anonymous"
+    
+    /// To create a "deep copy"
+    func copy() -> User {
+        let user = User()
+        user.username = username
+        return user
+    }
+}
+
+var user1 = User()
+var user2 = user1
+var user3 = user1.copy()
+user2.username = "Taylor" /// Data changes for both of them --> allows us to share common data
+/// structs do not share data across copies! This is very crucial
+user3.username = "50 Cent"
+print(user1.username)
+print(user1.username)
+print(user3.username)
+
+
 
 
