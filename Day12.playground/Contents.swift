@@ -126,6 +126,23 @@ print(user1.username)
 print(user1.username)
 print(user3.username)
 
+/// Deinitializers and working with variables inside of classes
+
+class UserEx2 {
+    var name = "Paul"
+}
+
+var user = UserEx2() /// although the let keyword is being used here, the user itself isn't changing. just the data inside it
+user.name = "Taylor"
+print(user.name)
+
+/// Change actual instance of user --> "moved the signpost" but if it was let user on line 135 we wouldn't be able to do this
+user = UserEx2()
+print(user.name)
+
+/// Classes don't need mutating keyword to change properties
+
+
 
 
 
