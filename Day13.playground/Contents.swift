@@ -144,7 +144,44 @@ struct Employee: Person {
 let taylor = Employee(name: "Tay Tay")
 taylor.sayHello()
 
+/// Protocols are like contracts for our code
+/// Opaque return types let use hide info in our code
+/// extensions let us add functionality to existing types
+/// protocol extensions let us add functionality to existing protocols
+
+/// Checkpoint 8: Requirements
+/// - Make a protocol that describes a building
+///     - protocol should require a property of how many rooms it has
+///     - a property storing the cost as an integer'
+///     - string for real estate agent selling the buillding
+///     - method for printing the sales summary of the building
+/// - Create two structs: House and Office that conform to the building protocol
 
 
+protocol Building {
+    var rooms: Int {get set}
+    var cost: Int { get set}
+    var agentName: String { get set }
+    
+    func printSaleSummary()
+        
+}
 
+extension Building {
+    func printSaleSummary() {
+        print(
+            "Sale Summary:",
+            "This house has \(rooms) rooms",
+            "This house costs \(cost)",
+            "This house was sold by agent \(agentName)")
+    }
+}
+
+struct House:Building {
+    
+}
+
+struct Office:Building {
+    
+}
 
