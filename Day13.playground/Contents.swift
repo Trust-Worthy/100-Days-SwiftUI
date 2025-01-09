@@ -178,10 +178,14 @@ extension Building {
 }
 
 struct House:Building {
-    
+    var rooms: Int
+    var cost: Int
+    var agentName: String
 }
 
 struct Office:Building {
-    
+    var rooms: Int
+    var cost: Int
+    var agentName: String 
 }
 
