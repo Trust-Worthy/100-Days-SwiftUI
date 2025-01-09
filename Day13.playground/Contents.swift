@@ -104,3 +104,47 @@ protocol View { } /// Used for some kind of thing we want to appear on the scree
 /// "Return some kind of View" an equatable. The compiler knows exactly what we're returning.
 
 
+/// Protocol Extensions --> Let us add functionality to existing types
+/// Let us extend protocols
+
+extension Collection { /// extending to Collection instead of Array
+    /// Added a computed property to Arrays
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+let guests  = ["mario","luigi","peach"]
+if guests.isNotEmpty {
+    print("Guest count: \(guests.count)")
+}
+
+/// Collection: array, set, dict all conform to protocol collection
+
+/// Protocol Oriented Programming: Pop
+/// Write requried methods. Then write default implementations in a protocol extension
+
+protocol Person {
+    var name: String {get }
+    func sayHello()
+}
+/// Adding defualt implementation of sayHello func in a protocol extension
+extension Person {
+    /// Conforming types can add their own sayHello func but they don't have to becuase they can depend on the default via the extension
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct Employee: Person {
+    let name: String
+    /// No sayHello func because it's defined by def in extension
+}
+
+let taylor = Employee(name: "Tay Tay")
+taylor.sayHello()
+
+
+
+
+
