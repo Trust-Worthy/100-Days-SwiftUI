@@ -76,3 +76,31 @@ commute(distance: 50, using: bike)
 
 getTravelEstimates(using: [car,bike], distance: 200)
 
+/// How to use opaque return types --> Help to reduce complexity
+/// Every SwiftUI uses opaque return types that's why we're learning it
+
+
+func getRandomNumber() -> some Equatable { /// Can't return equatable. key to understanding opaque return types
+    Int.random(in: 1...6) /// Swift knows an integer will be returned from this function
+    /// There is flexibility to change this to Double etc etc
+}
+/// You can return protocols from functions. It's a helpful thing to do
+func getRandomBool() -> some Equatable { /// must use some keyword
+    Bool.random()
+}
+/// I can also return for example ... some Vehicle. A spcific type of some Vehicle. That makes sense to me
+/// Equatable protocol allows us to use == to compare two instances of the same type
+
+print(getRandomNumber() == getRandomNumber())
+
+/// Returning protocols allow us to hide information kinda like ADT in C. You don't touch the actual struct in C when you just return a pointer to it
+/// Opaque return types allow us to hide information in our code, but not from the Swift Compiler
+
+/// The "return type" for our layout is a bunch of different tyings: colors, boxes, etc. Instead, we can use an Equatable so we don't have to write
+/// return #431234 , box etc etc or else you would have to change it every time you want to see something different on the screen
+
+
+protocol View { } /// Used for some kind of thing we want to appear on the screen
+/// "Return some kind of View" an equatable. The compiler knows exactly what we're returning.
+
+
