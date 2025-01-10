@@ -159,3 +159,18 @@ print(user)
 /// ?? unwraps and returns an optional's value: or a default value instead
 /// Optional chaining reads an optional inside another optional
 /// try? can convert throwing functions so they return an optional
+
+/// Checkpoint 9
+/// Requirements:
+/// - Write a function that accepts an optional array of integers, and returns one of those integers randomly
+/// - If the array is missing or empty, return a new random number in the range 1 through 100
+/// - "The catch" -> write this function in a single line of code...
+
+
+
+func check9(arr: [Int]?) -> Int { return arr?.randomElement() ?? Int.random(in: 1...100) }
+
+var emArr: [Int]? = nil
+var solution = check9(arr: emArr)
+print(solution)
+
