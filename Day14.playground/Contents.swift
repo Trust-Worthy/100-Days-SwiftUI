@@ -56,3 +56,43 @@ var number2: Int? = nil
 if let number2 = number2 {
     print(square(num: number2)) /// Shadowing: unwrapped optional is only in the context of the brackets
 }
+
+
+/// How to unwrap optionals with guard
+
+func printSquare(of number: Int?) {
+    guard let number = number else { /// Unwrap number into shadow content else print "missing input"
+        print("Missing input")
+        return
+    }
+    
+    print("\(number) x \(number) is \(number * number)")
+}
+
+/// if let vs guard let
+
+var myVar: Int? = 3
+
+if let unwrapped = myVar {
+    /// Run if myVar has a value inside
+}
+
+//guard let unwrapped = myVar else {
+//    /// Run if myVar doesn't have a value inside
+//    throw Error
+//}
+
+/// Swift requires a return if the guard check fails
+/// if optional passed it's made available after the guard check
+
+
+/// How to unwrap optionals with nil coalescing
+/// nil coalescing attemps to unwrap a value. if it's empty it will provide a default value
+
+let captains = [
+    "Enterprise":"Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko"
+]
+
+
