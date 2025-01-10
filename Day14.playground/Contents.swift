@@ -131,3 +131,31 @@ var book2: Book? = nil
 let authorOfBook = book2?.author?.first?.uppercased() ?? "A"
 print(authorOfBook)
 
+/// How to handle function failure with optionals
+/// Don't use try? if you want to know the exact error that was thrown
+
+enum UserError: Error {
+    case badID, networkFailed
+}
+
+func getUser(id: Int) throws -> String {
+    throw UserError.networkFailed
+}
+
+if let user5 = try? getUser(id: 23) {
+    print("User: \(user5)")
+}
+
+/// Using nil coalescing with the try? operator
+let user = (try? getUser(id: 23)) ?? "Anonymous" /// If getUser fails use "Anonymous"
+print(user)
+
+/// Summary of today's learnings
+/// Optionals allow us to represent the absence of data
+/// everything that isn't an optional def has a value inside
+/// unqrapping looks inside the opitonal: if there's a vlaue it's sent back
+/// if let runs code if the optional has a value
+/// guard let runs code if the optional doesn't have a value
+/// ?? unwraps and returns an optional's value: or a default value instead
+/// Optional chaining reads an optional inside another optional
+/// try? can convert throwing functions so they return an optional
