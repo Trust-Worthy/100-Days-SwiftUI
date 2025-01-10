@@ -117,4 +117,17 @@ print("The string was the number \(convertedNumber)")
 
 /// How to handle multiple optionals using optional chaining
 
+let names = ["Jim","Ben","Becky","Jessica"]
+let chosen = names.randomElement()?.uppercased() ?? "No one" /// Optional chaining. if there is a random element then run uppercased.
+/// As soon as any part of the chain sends back nil, the whole thing breaks down. You could create long queries to ensure the value is "safe"
+print("Next in line: \(chosen)")
+
+/// Better example: optional instance of book struct
+/// The book might have an author or the book might be anonymous
+/// If if has an author, attempt to read the first letter
+/// If the first letter is there, uppercase it.
+
+var book2: Book? = nil
+let authorOfBook = book2?.author?.first?.uppercased() ?? "A"
+print(authorOfBook)
 
