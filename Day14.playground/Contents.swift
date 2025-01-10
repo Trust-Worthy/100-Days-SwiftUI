@@ -95,4 +95,26 @@ let captains = [
     "Defiant": "Sisko"
 ]
 
+let new = captains["Serenity"] ?? "N/A" /// There won't be a value. If there isn't a value it will send back "N/A"
+/// ["Serenity",default: "N/A"] also works
+
+let tvShows = ["Arrow","Flash","Legends of Tomorrow"]
+let favorite = tvShows.randomElement() ?? "None" // randomElement return an optional
+
+struct Book {
+    let title: String
+    let author: String?
+}
+
+let book = Book(title: "Hebrews", author: nil)
+let author = book.author ?? "Anonymous" /// Another example of using
+
+print(author)
+
+let input = ""
+let convertedNumber = Int(input) ?? 0
+print("The string was the number \(convertedNumber)")
+
+/// How to handle multiple optionals using optional chaining
+
 
