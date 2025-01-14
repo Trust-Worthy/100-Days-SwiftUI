@@ -37,9 +37,39 @@ do {
 
 /// Closures Review: I really need this
 
-let sayHello = {
-    print("Hi there")
+let sayHello = { (name: String) -> String in
+    "Hi \(name)"
 }
-sayHello() /// Remember, closures kinda reminds me of function pointers in C at the most basic level.
+let aye = sayHello("bro") /// Remember, closures kinda reminds me of function pointers in C at the most basic level.
+print(aye)
+
+let team = ["Gloria","Jaime","Gunter","Gus","Jack","Bub","Doug"]
+
+let onlyG = team.filter( { (name: String) -> Bool in
+    return name.hasPrefix("G")
+})
+
+print(onlyG)
 
 
+/// Computed properties
+
+struct Employee {
+    let name:String
+    var vacationAllowed = 14
+    var vacationTaken = 0
+    
+    /// computed property
+    /// calculated dynamically
+    var vacationRemaining: Int {
+        get {
+            vacationAllowed - vacationTaken
+        }
+        
+        set {
+            vacationAllowed = vacationTaken + newValue
+        }
+    }
+    
+    
+}
