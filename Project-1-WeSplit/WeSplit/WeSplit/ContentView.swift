@@ -2,20 +2,29 @@
 //  ContentView.swift
 //  WeSplit
 //
-//  Created by Jonathan Bateman on 1/14/25.
+//  Created by Trust-Worthy on 1/14/25.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
+        Form {
+            Section {
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+            }
+            
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
             Text("Hello, world!")
         }
-        .padding()
+        
     }
 }
 
