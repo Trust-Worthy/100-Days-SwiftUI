@@ -33,15 +33,25 @@ struct ContentView: View {
 //        
 //    }
     /// Swift UI wants to know how to read & write to the name var
-    @State private var name = ""
+    @State private var selectedStudent = "Harry"
+    let students = ["Jon","Jeff","Jimmy","Harry"]
     
     
     var body: some View {
-        Form {
-            TextField("Enter you name sir",text: $name)
-            /// $name creates a two-way binding so that you can update the text and display the updated text
-            Text("Your name is: \(name)") /// Just writing name means I want to just read the name var
+        NavigationStack {
+            Form {
+                Picker("Select your student,", selection: $selectedStudent) {
+                    ForEach(students, id: \.self) {
+                        // id: \.self --> this is used to identify every view uniquely
+                        // The strings themselves are their own unique identifier
+                        // But if there were duplicate strings there would be issues
+                        Text($0)
+                    }
+                }
+            }
+            .navigationTitle("Select a Student")
         }
+        
     }
 }
 
