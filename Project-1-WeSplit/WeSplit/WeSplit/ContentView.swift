@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var checkAmount: Double = 0.0 // @State automatically watches for changes
     @State private var numberOfPeople: Int =  2
     @State private var tipPercentage: Int = 20
+    @FocusState private var amountIsFocused: Bool // just like State but used to handle focused input in our UI
     
     
     
@@ -45,6 +46,8 @@ struct ContentView: View {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     // Locale is a huge struct that has all the users region settings
                         .keyboardType(.decimalPad) // make the keyboard more convienient for the user when typing in checks.
+                        .focused($amountIsFocused) // SwiftUI becomes aware when this Textfield is focused
+                        // two way binding on amount is focused
                     
                     Picker("Number of people",selection: $numberOfPeople) {
                         ForEach(2..<100){
@@ -75,7 +78,13 @@ struct ContentView: View {
             }
             .navigationTitle("WeSplit")
             /// Views are able to show many inside them
-            
+            .toolbar { //
+                if amountIsFocused {
+                    Button("Done") { // Only show button when amountIsFocused is set to true
+                        amountIsFocused = false // Keyboard gets dismissed
+                    }
+                }
+            }
             /// Segmented control
             
         }
