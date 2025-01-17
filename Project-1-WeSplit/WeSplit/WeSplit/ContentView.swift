@@ -63,18 +63,23 @@ struct ContentView: View {
                 Section("How much do you want to tip?") { // Made a clean prompt
                     
                     Picker("Tip percentage", selection: $tipPercentage){
-                        ForEach(tipPercentages, id: \.self) {
+                        ForEach(0..<101) {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented) // this makes the slider type option
+                    .pickerStyle(.navigationLink) // this makes the slider type option
                 }
                 
                 
-                Section  {
+                Section("Amount per person")  {
                     Text(totalPerPerson,format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
                 
+                Section("Final Check Balance Owed") {
+                    let tipValue: Double = checkAmount / 100 * Double(tipPercentage)
+                    Text("$\(checkAmount + tipValue)")
+                }
+//                
             }
             .navigationTitle("WeSplit")
             /// Views are able to show many inside them
