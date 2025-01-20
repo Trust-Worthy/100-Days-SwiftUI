@@ -18,24 +18,27 @@ struct ContentView: View {
     @State private var userInputValue: Double = 0.0
     @State private var userInputUnit: String = ""
     @State private var userOutputUnit: String = ""
+    //@State private var userConversionType: String = ""
     
-    let timeOptions = ["seconds","minutes","hours","days"]
-    let temperature
+    
+    let timeOptions: [String] = ["seconds","minutes","hours","days"]
+    // let temperatureOptions: [String] = ["Celsius","Farenheit","Kelvin"]
+    
+    
     
     /// Creating a computed property to convert the user input value into the desired
     /// and proper output unit
     var convertedValue: Double {
         
+        
+        return 0
     }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Form {
+                
+            }
         }
-        .padding()
-    }
 }
 
 #Preview {
