@@ -33,23 +33,29 @@ struct ContentView: View {
     /// Creating a computed property to convert the user input value into the desired
     /// and proper output unit
     var convertedValueSec: Double {
+        var answer: Double = 0
         
         switch userInputUnit {
         case "minutes":
-            return userInputValue * 60 // 3 min = 3 * 60 = 180 seconds
+             answer = userInputValue * 60 // 3 min = 3 * 60 = 180 seconds
+            break
         case "hours":
-            return userInputValue * 3600 // 2 hours = 2 * 3600 = 7200 seconds
+            answer = userInputValue * 3600 // 2 hours = 2 * 3600 = 7200 seconds
+            break
         case "days":
-            return userInputValue * 86_400
+            answer = userInputValue * 86_400
+            break
         default:
-            return userInputValue // defaults to user input value being in seconds
+            answer =  userInputValue // defaults to user input value being in seconds
         }
         
+        return answer
     }
     
     var convertedValueOutputUnit: Double {
         
         switch userOutputUnit {
+            
         case "minutes":
             return convertedValueSec / 60 // 180 seconds / 60 = 3 min
         case "hours":
