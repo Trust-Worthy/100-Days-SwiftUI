@@ -21,6 +21,10 @@ struct ContentView: View {
     
     //@State private var userConversionType: String = ""
     
+    let second: Int = 1
+    let minute: Int = 60
+    let hour: Int = 3600
+    let day: Int = 86_400
     
     let timeUnits: [String] = ["seconds","minutes","hours","days"]
     // let temperatureOptions: [String] = ["Celsius","Farenheit","Kelvin"]
@@ -29,23 +33,66 @@ struct ContentView: View {
     
     /// Creating a computed property to convert the user input value into the desired
     /// and proper output unit
-    var convertedValue: Double {
+    var convertedValueSec: Double {
+
+        switch userInputUnit {
+        case "minutes":
+            return userInputValue * 60 // 3 min = 3 * 60 = 180 seconds
+        case "hours":
+            return userInputValue * 3600 // 2 hours = 2 * 3600 = 7200 seconds
+        case "days":
+            return userInputValue * 86_400
+        default:
+            return userInputValue // defaults to user input value being in seconds
+        }
         
-        
-        return 0
     }
+    
+    var convertedValueOutputUnit: Double {
+        
+        switch userOutputUnit {
+        case "minutes":
+            return convertedValueSec / 60 // 180 seconds / 60 = 3 min
+        case "hours":
+            return convertedValueSec / 3600 // 7200 / 3600 = 2 hours
+        case "days":
+            return userInputValue / 86_400 // converts seconds into days
+        default:
+            return userInputValue // defaults to user output value being in seconds
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Picker("Select an Input Unit",selection: $userInputUnit) {
+                Section("Time Units") {
+                  
+                    
+                    Picker("Select Input Time Unit",selection: $userInputUnit) {
+                        ForEach(timeUnits, id:\.self) {
+                            Text($0)
+                        }
+                    }
+                    Picker("Select Output Time Unit",selection: $userInputUnit) {
                         ForEach(timeUnits, id:\.self) {
                             Text($0)
                         }
                     }
                     
+                }
+                
+                Section("Input the time to convert "){
+                    TextField("Time",value: $userInputValue,formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                     
                 }
+                
+                Section("Converted time"){
+                    TextField("Time",value: $userInputValue,formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                    
+                }
+                
             }
             .navigationTitle("Unit Converter")
         }
