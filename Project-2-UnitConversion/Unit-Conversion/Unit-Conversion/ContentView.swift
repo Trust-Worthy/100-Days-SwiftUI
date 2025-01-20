@@ -18,10 +18,11 @@ struct ContentView: View {
     @State private var userInputValue: Double = 0.0
     @State private var userInputUnit: String = ""
     @State private var userOutputUnit: String = ""
+    
     //@State private var userConversionType: String = ""
     
     
-    let timeOptions: [String] = ["seconds","minutes","hours","days"]
+    let timeUnits: [String] = ["seconds","minutes","hours","days"]
     // let temperatureOptions: [String] = ["Celsius","Farenheit","Kelvin"]
     
     
@@ -36,11 +37,21 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                
+                Section {
+                    Picker("Select an Input Unit",selection: $userInputUnit) {
+                        ForEach(timeUnits, id:\.self) {
+                            Text($0)
+                        }
+                    }
+                    
+                    
+                }
             }
+            .navigationTitle("Unit Converter")
         }
+        
+    }
 }
-
 #Preview {
     ContentView()
 }
