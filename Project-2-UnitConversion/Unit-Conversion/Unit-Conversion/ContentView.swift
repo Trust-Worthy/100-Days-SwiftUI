@@ -19,12 +19,11 @@ struct ContentView: View {
     @State private var userInputUnit: String = ""
     @State private var userOutputUnit: String = ""
     
+    var inputUnit = ""
+    var outputunit = ""
+    
     //@State private var userConversionType: String = ""
     
-    let second: Int = 1
-    let minute: Int = 60
-    let hour: Int = 3600
-    let day: Int = 86_400
     
     let timeUnits: [String] = ["seconds","minutes","hours","days"]
     // let temperatureOptions: [String] = ["Celsius","Farenheit","Kelvin"]
@@ -34,7 +33,7 @@ struct ContentView: View {
     /// Creating a computed property to convert the user input value into the desired
     /// and proper output unit
     var convertedValueSec: Double {
-
+        
         switch userInputUnit {
         case "minutes":
             return userInputValue * 60 // 3 min = 3 * 60 = 180 seconds
@@ -73,7 +72,8 @@ struct ContentView: View {
                             Text($0)
                         }
                     }
-                    Picker("Select Output Time Unit",selection: $userInputUnit) {
+                   
+                    Picker("Select Output Time Unit",selection: $userOutputUnit) {
                         ForEach(timeUnits, id:\.self) {
                             Text($0)
                         }
@@ -81,15 +81,15 @@ struct ContentView: View {
                     
                 }
                 
-                Section("Input the time to convert "){
+                Section("Input time in \(userInputUnit)"){
                     TextField("Time",value: $userInputValue,formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                     
                 }
                 
-                Section("Converted time"){
-                    TextField("Time",value: $userInputValue,formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
+                Section("Converted time in \(userOutputUnit)"){
+                    Text("\(convertedValueOutputUnit)")
+                        
                     
                 }
                 
