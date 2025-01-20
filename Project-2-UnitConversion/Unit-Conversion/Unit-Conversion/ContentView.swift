@@ -53,18 +53,24 @@ struct ContentView: View {
     }
     
     var convertedValueOutputUnit: Double {
+        var answer: Double = 0
         
         switch userOutputUnit {
             
         case "minutes":
-            return convertedValueSec / 60 // 180 seconds / 60 = 3 min
+            answer = convertedValueSec / 60 // 180 seconds / 60 = 3 min
+            break
         case "hours":
-            return convertedValueSec / 3600 // 7200 / 3600 = 2 hours
+            answer = convertedValueSec / 3600 // 7200 / 3600 = 2 hours
+            break
         case "days":
-            return userInputValue / 86_400 // converts seconds into days
+            
+            answer = userInputValue / 86_400 // converts seconds into days
+            break
         default:
             return userInputValue // defaults to user output value being in seconds
         }
+        return answer
     }
     
     var body: some View {
