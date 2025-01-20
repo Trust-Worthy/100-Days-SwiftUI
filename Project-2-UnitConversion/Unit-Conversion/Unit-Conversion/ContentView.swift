@@ -88,7 +88,7 @@ struct ContentView: View {
                 }
                 
                 Section("Converted time in \(userOutputUnit)"){
-                    Text("\(convertedValueOutputUnit)")
+                    Text("\(convertedValueOutputUnit.formatted())")
                         
                     
                 }
