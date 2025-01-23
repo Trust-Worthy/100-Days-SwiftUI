@@ -1,8 +1,8 @@
-# Prework - *Work Work Work Work Work...*
+# Prework - *Work It*
 
 Submitted by: **Jonathan Bateman**
 
-**Name of your app** is an app that... [TODO] 
+**Work It** is an app that... changes the colors of the background.
 
 Time spent: **40 minutes** spent in total making this app
 
