@@ -13,6 +13,53 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
+        
+        
+        
+        
+        
+        // customizing the button
+//        Button {
+//            // trailing closure
+//            print("Button was tapped")
+//        } label: {
+//            Text("Tap me!")
+//                .padding()
+//                .foregroundStyle(.white)
+//                .background(.red)
+//
+//        }
+        
+        
+        
+        
+        //        Button("Delete selection", role: .destructive, action: executeDelete)
+//        VStack {
+//            
+//            Button("Blue Pill") { }
+//                .buttonStyle(.bordered)
+//            
+//            Button("Red Pill", role:.destructive) { }
+//                .buttonStyle(.bordered)
+//            
+//            Button("Button 3") { }
+//                .buttonStyle(.borderedProminent) // Don't use prominent too much!
+//                .tint(.indigo)
+//            
+//            Button("Button 4", role:.destructive) { }
+//                .buttonStyle(.borderedProminent)
+//        }
+        
+        
+    }
+        
+    func executeDelete() {
+        print("Now deleting...")
+    }
+        
+        
+        
+        
         /// 4 kinds of gradients to use
         /// 1. array of colors to show
         /// 2. size and dir info
@@ -22,10 +69,10 @@ struct ContentView: View {
         /// angular / conic gradient --> cycle colors around the circle
         /// simple --> .gradient after an color. Very simple
         
-        Text("Your content")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .foregroundColor(.white)
-            .background(.blue.gradient)
+//        Text("Your content")
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .foregroundColor(.white)
+//            .background(.blue.gradient)
         //AngularGradient(colors: [.red, .yellow,.green, .blue,.purple],center: .center) // dope rainbow!
 //        RadialGradient(colors: [.blue,.black], center: .center, startRadius: 20, endRadius: 200) // Ok that just looks really freaking cool
         
@@ -60,7 +107,7 @@ struct ContentView: View {
 //        
         
         
-    }
+    
 }
 
 #Preview {
