@@ -14,9 +14,11 @@ struct ContentView: View {
     var body: some View {
         
         
-        
-        
-        
+        Image(decorative: "Estonia") // iOS screen reader won't read it out.
+        Image(systemName: "pencil.circle") // writing code that is sensitive to screen readers is really really important
+            .foregroundStyle(.red)
+            .font(.largeTitle)
+    }
         
         // customizing the button
 //        Button {
@@ -51,7 +53,7 @@ struct ContentView: View {
 //        }
         
         
-    }
+    
         
     func executeDelete() {
         print("Now deleting...")
