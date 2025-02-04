@@ -12,12 +12,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        Text("Hello, world!")
+        Text("This is another text view.")
         
-        
-        Image(decorative: "Estonia") // iOS screen reader won't read it out.
-        Image(systemName: "pencil.circle") // writing code that is sensitive to screen readers is really really important
-            .foregroundStyle(.red)
-            .font(.largeTitle)
+//        Image(decorative: "Estonia") // iOS screen reader won't read it out.
+//        Image(systemName: "pencil.circle") // writing code that is sensitive to screen readers is really really important
+//            .foregroundStyle(.red)
+//            .font(.largeTitle)
     }
         
         // customizing the button
