@@ -12,14 +12,46 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-        Text("This is another text view.")
         
+//        VStack(spacing: 20) { // explicity put text in a vertical stack
+//            Text("Hello, world!")
+//            Text("This is another text view.")
+//        }
+//        
+//        VStack(alignment: .leading) {
+//            // leading = "left"
+//            // trailing = "right"
+//            
+//            Text("Hello, world!")
+//            Text("This is another text view.")
+//        }
+//        
+//        HStack(spacing: 20) {
+//            Text("What's up gang!")
+//            Text("Boom pow!")
+//        }
+        
+        VStack {
+            
+            Spacer()
+            
+            Text("First")
+            Text("Second")
+            Text("Third")
+            Spacer()
+            Spacer()
+        }
+        
+        ZStack(alignment: .top) {
+            Text("Top Man") // back of Z stack
+            Text("Big                   man") // front of Z stack
+        }
+    }
 //        Image(decorative: "Estonia") // iOS screen reader won't read it out.
 //        Image(systemName: "pencil.circle") // writing code that is sensitive to screen readers is really really important
 //            .foregroundStyle(.red)
 //            .font(.largeTitle)
-    }
+    
         
         // customizing the button
 //        Button {
