@@ -17,10 +17,13 @@ struct ContentView: View {
     var body: some View {
         
         Button("Show alert") {
-            showingAlert = true`
+            showingAlert = true
         }
         .alert("Important message",isPresented: $showingAlert) {
-            Button("OK") {}
+            Button("Delete", role: .destructive) {}
+            Button("Cancel", role:.cancel) {}
+        } message: {
+            Text("Please read carefully!")
         }
         
         
