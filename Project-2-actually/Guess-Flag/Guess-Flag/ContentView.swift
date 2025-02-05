@@ -17,11 +17,30 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
-            Text("Tap the flag of")
-            Text(countries[correctAnswer])
+        
+        ZStack {
+            Color.blue
+                .ignoresSafeArea()
+            VStack(spacing: 30) {
+                
+                VStack {
+                    Text("Tap the flag of")
+                        .foregroundStyle(.white)
+                    Text(countries[correctAnswer])
+                }
+                
+                /// spacing is really nice
+                
+                ForEach(0..<3) { number in
+                    Button {
+                        // flag was tapped
+                    } label: {
+                        Image(countries[number])
+                    }
+                }
+                
+            }
         }
-       
     }
 
    
