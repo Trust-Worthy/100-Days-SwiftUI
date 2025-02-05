@@ -11,172 +11,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingAlert = false
+    var countries: [String] = ["Estonia","France","Germany","Ireland","Italy","Nigeria","Poland","Spain","UK","Ukraine","US"]
     
+    var correctAnswer = Int.random(in: 0...2)
     
     var body: some View {
         
-        Button("Show alert") {
-            showingAlert = true
+        VStack {
+            Text("Tap the flag of")
+            Text(countries[correctAnswer])
         }
-        .alert("Important message",isPresented: $showingAlert) {
-            Button("Delete", role: .destructive) {}
-            Button("Cancel", role:.cancel) {}
-        } message: {
-            Text("Please read carefully!")
-        }
-        
-        
-        
+       
     }
-    
-    //        Button("Delete Selection",role: .destructive, action: executeDelete)
-    //        }
-    
-    
-    
-    
-    //       func executeDelete() {
-    //           print("Now deleting...")
-    //       }
-    
-    //ZStack {
-    //            Color.indigo
-    //                .frame(minWidth: 200, maxWidth: .infinity,maxHeight: 200)
-    ////                .frame(width:200, height:200)
-    ////            Color.primary
-    ////                .frame(minWidth: 200, maxWidth: .infinity,maxHeight: 200)
-    //            Text("Your content")
-    ////                .background(.red)
-    //
-    //        }
-    //
-    //        VStack(spacing: 20) { // explicity put text in a vertical stack
-    //            Text("Hello, world!")
-    //            Text("This is another text view.")
-    //        }
-    //
-    //        VStack(alignment: .leading) {
-    //            // leading = "left"
-    //            // trailing = "right"
-    //
-    //            Text("Hello, world!")
-    //            Text("This is another text view.")
-    //        }
-    //
-    //        HStack(spacing: 20) {
-    //            Text("What's up gang!")
-    //            Text("Boom pow!")
-    //        }
-    
-    //        VStack {
-    //
-    //            Spacer()
-    //
-    //            Text("First")
-    //            Text("Second")
-    //            Text("Third")
-    //            Spacer()
-    //            Spacer()
-    //        }
-    //
-    //        ZStack(alignment: .top) {
-    //            Text("Top Man") // back of Z stack
-    //            Text("Big                   man") // front of Z stack
-    //        }
-    //    }
-    //        Image(decorative: "Estonia") // iOS screen reader won't read it out.
-    //        Image(systemName: "pencil.circle") // writing code that is sensitive to screen readers is really really important
-    //            .foregroundStyle(.red)
-    //            .font(.largeTitle)
-    
-    
-    // customizing the button
-    //        Button {
-    //            // trailing closure
-    //            print("Button was tapped")
-    //        } label: {
-    //            Text("Tap me!")
-    //                .padding()
-    //                .foregroundStyle(.white)
-    //                .background(.red)
-    //
-    //        }
-    
-    
-    
-    
-    //        Button("Delete selection", role: .destructive, action: executeDelete)
-    //        VStack {
-    //
-    //            Button("Blue Pill") { }
-    //                .buttonStyle(.bordered)
-    //
-    //            Button("Red Pill", role:.destructive) { }
-    //                .buttonStyle(.bordered)
-    //
-    //            Button("Button 3") { }
-    //                .buttonStyle(.borderedProminent) // Don't use prominent too much!
-    //                .tint(.indigo)
-    //
-    //            Button("Button 4", role:.destructive) { }
-    //                .buttonStyle(.borderedProminent)
-    //        }
-    
-    
-    
-    
-    
-    
-    
-    
-    /// 4 kinds of gradients to use
-    /// 1. array of colors to show
-    /// 2. size and dir info
-    /// 3. kind of gradient
-    /// linear gradient --> shows it in a straight line
-    /// radial gradient --> shows how far colors in terms of radius
-    /// angular / conic gradient --> cycle colors around the circle
-    /// simple --> .gradient after an color. Very simple
-    
-    //        Text("Your content")
-    //            .frame(maxWidth: .infinity, maxHeight: .infinity)
-    //            .foregroundColor(.white)
-    //            .background(.blue.gradient)
-    //AngularGradient(colors: [.red, .yellow,.green, .blue,.purple],center: .center) // dope rainbow!
-    //        RadialGradient(colors: [.blue,.black], center: .center, startRadius: 20, endRadius: 200) // Ok that just looks really freaking cool
-    
-    
-    //        LinearGradient(stops: [ // allows more fine tuning of the gradient
-    //            .init(color: .white, location: 0.45), //  the gradient is going from .45 - .55
-    //            .init(color: .black, location: 0.55)
-    //        ], startPoint: .top, endPoint: .bottom)
-    
-    
-    //        ZStack {
-    //            // ** Things at the top of the Z stack are written first.
-    //            // ** Then things below are written on top
-    //            VStack(spacing: 0){
-    //                Color.red
-    //                Color.blue
-    //            }
-    //            //Color.primary // flips colors --> semantic colors
-    //            //Color.indigo // This is a view in its own right
-    //            //Color(red:234,green: 0.8, blue:123) // Make your own color
-    //                //.frame(width: 200,height:200)
-    //                //.frame(minWidth: 200, maxWidth: .infinity, maxHeight: 200) // This makes it flexible
-    //            Text("Your content")
-    //                .foregroundStyle(.secondary)
-    //                .padding(50)
-    //                .background(.ultraThinMaterial) // Frosted glass effect
-    //            // iOS called vibrancy. Makes text standout on any background!
-    //
-    //        }
-    //        //.background(.blue) Just the background of the Text object
-    //        .ignoresSafeArea() // all important context should be in the safe area!!
-    //
-    
-    
+
+   
     
 }
 
