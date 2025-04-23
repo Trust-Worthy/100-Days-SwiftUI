@@ -1,21 +1,27 @@
+Sure! Here's your updated README following the new template:
+
+---
+
 # Prework - *Work It*
 
 Submitted by: **Jonathan Bateman**
 
-**Work It** is an app that... changes the colors of the background.
+**Work It** is an app that changes the background color of the screen when a button is tapped, showcasing basic Swift UI components and interactivity.
 
-Time spent: **40 minutes** spent in total making this app
+Time spent: **40 minutes** spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] Users are see a screen with three labels and a button
+- [x] Users see a screen with three labels and a button  
 - [x] Tapping the button changes the screen color to a random color
- 
+
 ## Video Walkthrough
 
-Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README. 
+Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README.  
+[Guide](https://www.youtube.com/watch?v=GA92eKlYio4)
+
 <div>
     <a href="https://www.loom.com/share/5f0e42fdae534f998e52f8e81b173337">
       Loom Message - 22 January 2025 - Watch Video
@@ -23,35 +29,46 @@ Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove th
     <a href="https://www.loom.com/share/5f0e42fdae534f998e52f8e81b173337">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5f0e42fdae534f998e52f8e81b173337-1191639bf1c4e85d-full-play.gif">
     </a>
-  </div>
+</div>
 
 ## App Brainstorming (Step 4)
 
 ### Favorite Apps
-- Discord
-- Premier League App
-- Checker App
+- **Discord**  
+  - Instantly join video calls without hassle
+  - In-app previews for images, videos, and links
 
-Features that I love:
-Discord --> The ability to join a video call instantaneously without having to go through the hassle of sending a meeting link.
-Discord --> I love how images, videos, and links load in the app so that you can get a preview. YouTube videos can even play. This means I don't have to open another app when someone sends me a funny tiktok.
+- **Premier League App**  
+  - Leaderboards for bragging rights  
+  - Quick access to player stats
 
-Premier League App --> The leaderboards for sure! You get to have braging rights over all of your friends. 
-Premier League App --> Stats! I love being able to quickly glance at the stats of my favorite players.
-
-Checker App --> This is an app made by a solo dev I watch on YouTube. He created an app that allows you to create habits and check them off... The coolest part is that it looks like you Github commit calendar!
-Checker App --> I love the encouraging animation that occurs when you 'check-in' for the day on one of your habits.
+- **Checker App**  
+  - Habit tracking styled like GitHub's commit calendar  
+  - Encouraging animations for daily check-ins
 
 ### App Idea
-App Premise: Create an app that middle school, highschool, and college students can use related to the "unspoken" realities of college. This idea came about from my experiences of having to pester financial aid on a monthly basis to get scholarships processed, aid released, and clarity on billing. No one ever tells you some of the 'sneaky' shortcomings of our financial aid system. I want to create an app that educates students on this. 
+Create an app focused on helping students—middle school through college—navigate the often-hidden challenges of financial aid and college expenses. Inspired by personal experiences, the app would educate users on common issues, provide real-life “financial aid journeys” similar to LinkedIn-style histories, and offer a space to anonymously share stories.
 
-Additionally, I want to open the app to people who have already been through college or are currently in college so that they can share their 'financial aid journey'. Similar to how you can you see someone's work history on LinkedIn, I want students to see how people paid for college over the course of 4-5 years. People could do this anonymously if they're uncomfortable with people knowing how much they received in scholarships or loans etc. So often, people are like, "just apply to scholarships". But the reality is, there are millions of students applying for the same scholarships on Fastweb, Unigo etc. You have to get creative with how you pay for school: fundraising, fellowships, work, starting a business. I want to inspire students to prepare for college in creative ways. 
-
-Lastly, I want to help students and families start saving for unforseen expeneses related to college that you never think about. For example: plane tickets (I'm from the mid-west but I go to school on the east coast), health insurance, dental insurance (not included in health insurance which is dumb), etc etc. I want to create a roadmap for students to start saving and thinking about the future expenses.
+The app could also guide users in preparing for unexpected college costs (travel, health/dental insurance, etc.) and inspire creative approaches to funding their education, such as fellowships, fundraising, or entrepreneurship.
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
-I was putting my app in a Git Repository I already made for my Swift Learning. There were some issues with making a commit with a .git repository within an already initialized repo.
+I faced a Git issue when placing the project inside an existing Swift learning repository that already had an initialized `.git` folder. This led to some commit and repo structure complications.
 
+## License
+
+    Copyright 2025 Jonathan Bateman
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
