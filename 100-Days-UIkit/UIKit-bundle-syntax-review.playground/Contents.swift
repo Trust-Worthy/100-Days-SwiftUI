@@ -88,4 +88,54 @@ var myNUm: Int = 10
 doubleInPlace(number: &myNUm)
 print(myNUm)
 
-//
+// closures
+
+let driving = {
+    print("I'm driving in my car")
+}
+
+driving()
+
+let drivingParam = { (place: String) in
+    print("I'm going to \(place) in my car")
+    
+}
+drivingParam("London")
+
+let drivinReturn = { (place: String ) -> String in
+    var message: String = "I'm going to \(place) in my car"
+    return message
+}
+
+let ret: String = drivinReturn("Argnetina")
+print(ret)
+
+
+let drivingClo = {
+    print("I'm driving in my car")
+}
+
+func travel(action: ()-> Void) {
+    print("I'm getting ready to go.")
+    action()
+    print("I arrived!")
+}
+
+travel(action: driving)
+
+// trailing closure syntax
+// If the last parameter to a function is a closure, swift lets you use special syntax
+// called "trailing closure syntax"
+func travelDos(action: () -> Void) {
+    print("I'm getting ready to go.")
+    action()
+    print("I arrived!")
+}
+
+
+travelDos {
+    print("This is a trailing closure.")
+}
+
+// using closures as parameters when they accept parameters
+func travelBruh
