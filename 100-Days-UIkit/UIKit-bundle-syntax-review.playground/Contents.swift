@@ -191,3 +191,19 @@ travelShorter {
     "SHORTEST: I'm going to \($0) in my car"
     
 }
+
+// closures with multiple parameters
+
+func travelMultiple(action: (String, Int) -> String) {
+    print("closures are crazy")
+    let desc = action("Zimbabwe", 60)
+    print(desc)
+}
+
+travelMultiple {
+    "This is a mad short closure: \($0) # \($1)"
+}
+
+travelMultiple { (country: String , num: Int) in
+    return "This is more descriptive \(country) + \(num)"
+}
