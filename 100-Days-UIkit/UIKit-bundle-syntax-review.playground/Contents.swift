@@ -67,3 +67,25 @@ func checkPassword(_ password: String) throws -> Bool{
     }
     return true
 }
+
+
+do {
+    try checkPassword("password")
+    print("taht password is great!")
+    
+} catch {
+    print("You can't use that password.")
+}
+
+// inout params
+
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNUm: Int = 10
+
+doubleInPlace(number: &myNUm)
+print(myNUm)
+
+//
