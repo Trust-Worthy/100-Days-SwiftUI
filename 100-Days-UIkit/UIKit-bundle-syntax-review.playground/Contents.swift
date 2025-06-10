@@ -138,4 +138,56 @@ travelDos {
 }
 
 // using closures as parameters when they accept parameters
-func travelBruh
+func travelBruh(action: (String) -> Void) {
+    print("Getting ready to go")
+    action("London Bruv")
+    print("I arrived!!!!")
+}
+
+
+// This is just straight diabolical syntax dog...
+travelBruh { (place: String) in
+    print("I am going to \(place) in my car")
+}
+
+// using closures as params when they return values
+func travelRet(action: (String) -> String) {
+    print("I'm getting ready to go.")
+    let description = action("London Mate")
+    print(description)
+    print("I arrived Gimme!")
+}
+
+// calling travel using trailing closure syntax
+travelRet { (place: String) -> String in
+    return "I'm going to \(place) in my carro"
+    
+}
+
+// shorthand param names
+func travelShorter(action: (String) -> String) {
+    print("About to leave for the Maldives")
+    let desctiption: (String) = action("London")
+    print(desctiption)
+    print("I arrived!")
+    
+}
+
+travelShorter { (place: String) -> String in
+    return "I'm going to \(place) in my car"
+    
+}
+
+travelShorter { place in
+    return "I'm going to \(place) in my car"
+    
+}
+travelShorter { place in
+    "I'm going to \(place) in my car"
+    
+}
+
+travelShorter {
+    "SHORTEST: I'm going to \($0) in my car"
+    
+}
