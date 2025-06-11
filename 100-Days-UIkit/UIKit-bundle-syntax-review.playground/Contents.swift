@@ -531,3 +531,5 @@ protocol HasVaction {
 }
 
 protocol Employee: Payable, NeedsTrainig, HasVaction { }
+
+// extensions in swift 
