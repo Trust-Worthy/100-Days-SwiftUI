@@ -309,3 +309,18 @@ person.makeAnonymous()
 print(person.name)
 
 // properties and methods of strings
+let string = "Do or do not there is no try"
+print(string.count)
+print(string.hasPrefix("Do"))
+print(string.uppercased())
+print(string.sorted())
+
+// properties of arrays
+var toys: [String] = ["Woody"]
+
+print(toys.count)
+toys.append("Buzz")
+print(toys.count)
+toys.firstIndex(of: "Buzz")
+// 
+
