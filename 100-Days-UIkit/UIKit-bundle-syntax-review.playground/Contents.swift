@@ -371,3 +371,20 @@ struct Person3 {
 
 var ed = Person3(name: "ed")
 ed.familyTree
+
+// static properties
+struct Student {
+    
+    nonisolated(unsafe) static var classSize = 0
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        Student.classSize += 1
+    }
+}
+
+let eddy = Student(name: "edddy")
+let taytay = Student(name: "Taylor")
+print(Student.classSize)
+
