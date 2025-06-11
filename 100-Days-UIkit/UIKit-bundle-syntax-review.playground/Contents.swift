@@ -498,6 +498,21 @@ class SingerChange {
 let donald = SingerChange()
 donald.name = "bruh"
 
-// 
+// swift protocols
 
+protocol Identifiable { // a protocol is a description not a type
+    var id: String { get set}
+}
+
+// I can create a struct that conforms to that protocol
+struct UserProto: Identifiable {
+    var id: String
+}
+
+func displayID(thing: Identifiable) {
+    print("My ID is \(thing.id)")
+}
+
+var protoUser = UserProto(id: "213423")
+displayID(thing: protoUser)
 
