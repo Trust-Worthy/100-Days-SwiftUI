@@ -264,3 +264,22 @@ let chessBoxing = Sport2(name: "Chessboxing", isOlympicSport: false)
 print(chessBoxing.olympicStatus)
 
 // property observers
+
+struct Progress {
+    var task: String
+    var amount: Int {
+        didSet {
+            print("\(task) is now \(amount)% complete")
+        }
+    }
+    
+}
+
+var progress = Progress(task: "Loading data", amount: 0)
+// we want swift to print an update every time amount changes
+progress.amount = 30
+progress.amount = 80
+progress.amount = 100
+
+// methods
+
