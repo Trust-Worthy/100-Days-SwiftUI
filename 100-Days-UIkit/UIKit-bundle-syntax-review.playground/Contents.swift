@@ -449,3 +449,19 @@ poodle2.makeNoise()
 // final classes
 final class DogFinal {
 }
+
+// copying objects
+
+class Singer { // if singer were a struct i would get Taylor swift a second time
+    var name = "Taylor Swift"
+}
+
+var singer = Singer()
+print(singer.name)
+
+var singerCopy = singer
+singerCopy.name = "Justin"
+
+print(singer.name) // creating the copy of the class is just a reference to the old class. Meaning the copy changes the original
+
+// deinitializers 
