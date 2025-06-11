@@ -339,3 +339,35 @@ struct User {
 var user = User()
 user.username = "bobbi"
 
+// referring to the current instance
+// self.name refers to the property
+// name refers to the parameter
+struct Person2 {
+    var name: String
+    
+    init(name: String) {
+        print("\(name) was born!")
+        self.name = name
+    }
+}
+
+// Lazy properties --> create properties only when they'r needed
+
+struct FamilyTree {
+    
+    init() {
+        print("Creating family tree!")
+    }
+}
+
+struct Person3 {
+    var name: String
+    lazy var familyTree = FamilyTree() // swift will only create this when it's first accessed!!
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+var ed = Person3(name: "ed")
+ed.familyTree
