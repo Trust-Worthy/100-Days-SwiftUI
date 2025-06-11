@@ -580,4 +580,24 @@ pythons.summarize()
 beatles.summarize()
 
 // protocol oriented programming
+protocol Identifiable2 {
+    var id: String {get set}
+    func identify()
+}
 
+// protocol extensions allow us to provide a default for the identify method!
+extension Identifiable2 {
+    func identify() {
+        print("My ID is \(id)") // I know that the protocol has an id property
+    }
+}
+
+
+struct UserProExt: Identifiable2 {
+    var id: String
+}
+
+let ganggang = UserProExt(id: "id id id")
+ganggang.identify()
+
+// summary --> Protocols specify what methods and properties conforming types must have.
