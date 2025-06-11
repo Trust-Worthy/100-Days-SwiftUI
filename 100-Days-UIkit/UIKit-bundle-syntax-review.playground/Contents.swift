@@ -388,3 +388,20 @@ let eddy = Student(name: "edddy")
 let taytay = Student(name: "Taylor")
 print(Student.classSize)
 
+// access controls --> let's u restrict which code can use properties and methods
+
+struct Person4 {
+    private var id: String // only methods inside person can read id property
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My social security number is \(id)"
+    }
+}
+
+let jimmm = Person4(id: "12345")
+print(jimmm.identify())
+
