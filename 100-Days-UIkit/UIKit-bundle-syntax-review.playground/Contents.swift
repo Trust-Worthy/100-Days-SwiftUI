@@ -235,4 +235,32 @@ rez("Greece")
 rez("France")
 rez("Asia")
 
+// Structs!!
+
+struct Sport {
+    var name: String  // struct property
+}
+
+var tennis: Sport = Sport(name: "Tennis")
+print(tennis.name)
+
+tennis.name = "Table tennis"
+// computed properties
+struct Sport2 {
+    var name: String
+    var isOlympicSport: Bool
+    
+    // computed property
+    var olympicStatus: String {
+        if isOlympicSport {
+            return "\(name) is an Olympic sport"
+        } else {
+            return "\(name) is not an Olympic sport"
+        }
+    }
+}
+
+let chessBoxing = Sport2(name: "Chessboxing", isOlympicSport: false)
+print(chessBoxing.olympicStatus)
+
 
