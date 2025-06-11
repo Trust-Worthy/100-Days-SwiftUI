@@ -532,4 +532,30 @@ protocol HasVaction {
 
 protocol Employee: Payable, NeedsTrainig, HasVaction { }
 
-// extensions in swift 
+// extensions in swift
+// allows you to add methods to existing types
+// now they can do things they were never intended to do
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+    
+    
+}
+
+let num = 8
+num.squared()
+
+// is this what functional programming is like
+// I can add a computed proterty! Can't add my own properties tho
+
+extension Int {
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+}
+
+let nummy = 10
+nummy.isEven
+
+// protocol extensions
