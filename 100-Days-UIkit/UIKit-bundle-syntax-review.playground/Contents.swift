@@ -221,6 +221,18 @@ let result = travelRetClosure()
 // result is now a closure / function
 result("London")
 
-// capturing closures
+// capturing values inside closures
+func travelCapture() -> (String) -> Void {
+    var counter = 1
+    return {
+        print("\(counter). I'm going to \($0)");
+        counter += 1; // each time the closure is called this will trigger
+    }
+}
+
+let rez = travelCapture()
+rez("Greece")
+rez("France")
+rez("Asia")
 
 
