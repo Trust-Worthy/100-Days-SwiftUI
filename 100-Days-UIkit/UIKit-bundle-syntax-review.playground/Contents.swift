@@ -516,3 +516,18 @@ func displayID(thing: Identifiable) {
 var protoUser = UserProto(id: "213423")
 displayID(thing: protoUser)
 
+// protocol inheritance
+
+protocol Payable {
+    func calculateWager() -> Int
+}
+
+protocol NeedsTrainig {
+    func study()
+}
+
+protocol HasVaction {
+    func takeVactation(days: Int)
+}
+
+protocol Employee: Payable, NeedsTrainig, HasVaction { }
