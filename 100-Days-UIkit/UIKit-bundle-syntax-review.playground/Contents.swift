@@ -322,5 +322,20 @@ print(toys.count)
 toys.append("Buzz")
 print(toys.count)
 toys.firstIndex(of: "Buzz")
-// 
+
+// initializers -> help initialize the struct
+
+struct User {
+    var username: String
+    
+    init() { // initializer
+        // make sure all properties have a value before the initializer ends!
+        username = "Anonymous"
+        print("Creating a new user!")
+    }
+    
+}
+
+var user = User()
+user.username = "bobbi"
 
