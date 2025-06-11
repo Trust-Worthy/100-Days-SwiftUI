@@ -281,5 +281,29 @@ progress.amount = 30
 progress.amount = 80
 progress.amount = 100
 
-// methods
+// methods --> functions inside of structs are called methods
 
+struct City {
+    var population: Int
+    
+    func collectTaxes() -> Int {
+        return population * 1000
+    }
+}
+
+let london: City = City(population: 9000000)
+print(london.collectTaxes())
+
+// mutating methods
+// if a struct is constant... all it's properties are constant
+struct Person {
+    var name: String
+    
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+
+var person = Person(name: "Ed")
+person.makeAnonymous()
+print(person.name)
