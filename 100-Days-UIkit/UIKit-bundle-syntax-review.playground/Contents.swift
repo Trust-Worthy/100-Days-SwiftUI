@@ -488,4 +488,16 @@ for _ in 1...3 {
 }
 
 // mutability
+// constant struct + variable property means the property can't be changed
+// constant class + variable property means the property can change
+
+class SingerChange {
+    var name = "Donald Glover" // make it constant if I don't want it to change
+}
+
+let donald = SingerChange()
+donald.name = "bruh"
+
+// 
+
 
