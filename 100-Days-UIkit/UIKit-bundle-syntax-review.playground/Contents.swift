@@ -559,3 +559,25 @@ let nummy = 10
 nummy.isEven
 
 // protocol extensions
+
+let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
+let beatles = Set(["John", "Paul", "George", "Ringo"])
+
+// swift arrays and sets conform to a protocol called Collection
+
+// extending the Collection protocol
+extension Collection {
+    func summarize() {
+        print("There are \(count) of us:")
+        
+        for name in self {
+            print(name)
+        }
+    }
+}
+
+pythons.summarize()
+beatles.summarize()
+
+// protocol oriented programming
+
