@@ -405,4 +405,29 @@ struct Person4 {
 let jimmm = Person4(id: "12345")
 print(jimmm.identify())
 
-// 
+// Classes! Finally
+// 1. Classes never come with their own member-wise initializer
+class Dog {
+    var name: String
+    var breed: String
+    
+    init(name: String, breed: String) {
+        self.name = name
+        self.breed = breed
+    }
+    
+}
+
+let poppy = Dog(name: "poppy", breed: "poodle")
+
+// class inheritance
+// child class
+class Poodle: Dog { // Poodle is inheriting from Dog
+    
+    init(name: String) {
+        super.init(name: name, breed: "poodle")
+    }
+    
+}
+
+// overriding methods
