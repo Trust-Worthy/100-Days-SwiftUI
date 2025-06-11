@@ -431,3 +431,21 @@ class Poodle: Dog { // Poodle is inheriting from Dog
 }
 
 // overriding methods
+class Dog2 {
+    func makeNoise () {
+        print("wolf")
+    }
+}
+
+class Poodle2: Dog2 {
+    override func makeNoise() {
+        print("YIP YIP BARK BARK")
+    }
+}
+
+let poodle2 = Poodle2()
+poodle2.makeNoise()
+
+// final classes
+final class DogFinal {
+}
