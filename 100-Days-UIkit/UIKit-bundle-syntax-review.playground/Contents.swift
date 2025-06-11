@@ -307,3 +307,5 @@ struct Person {
 var person = Person(name: "Ed")
 person.makeAnonymous()
 print(person.name)
+
+// properties and methods of strings
