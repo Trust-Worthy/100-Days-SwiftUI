@@ -207,3 +207,20 @@ travelMultiple {
 travelMultiple { (country: String , num: Int) in
     return "This is more descriptive \(country) + \(num)"
 }
+
+// returning closures from functions
+
+func travelRetClosure() -> (String) -> Void {
+    return { // closure the function is returning
+        print("I'm going to \($0)")
+        // this closure returns void aka nothing in the closure
+    }
+}
+
+let result = travelRetClosure()
+// result is now a closure / function
+result("London")
+
+// capturing closures
+
+
