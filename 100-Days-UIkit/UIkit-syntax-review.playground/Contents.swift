@@ -86,3 +86,16 @@ func greet(_ name: String) {
 }
 
 greet("Karl")
+
+// default parameters
+
+func greetDefParams(name: String, nicely: Bool = true) {
+    if nicely == true {
+        print("I'm greeting \(name) with kindness")
+    } else {
+        print("What are you... \(name) looking @@@??? Huh punk?")
+    }
+}
+
+
+greetDefParams(name: "Jimmy", nicely: false)
