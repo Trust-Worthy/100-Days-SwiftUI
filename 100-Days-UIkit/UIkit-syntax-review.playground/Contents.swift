@@ -359,8 +359,13 @@ jim.username = "Jim"
 print(jim.username)
 
 // using the self keyword to refer to the instance
-
+struct FamilyTree {
+    init(my name: String) {
+        print("Creating \(name)'s family tree!!!")
+    }
+}
 struct Person1 {
+    
     var name: String {
         didSet {
             print("\(name) was just added to the list.")
@@ -374,8 +379,14 @@ struct Person1 {
         print("\(name) just showed up to the party!!!")
         self.name = name
     }
+    lazy var familyTree = FamilyTree(my:name)
 }
 
 var jeff = Person1(name: "jeff")
 jeff.name = "Jim"
+
+var bobby = Person1(name: "bobby")
+bobby.familyTree
+
+
 
