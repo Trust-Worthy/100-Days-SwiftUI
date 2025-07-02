@@ -297,4 +297,20 @@ print(tennis.name)
 var running = Sport(name: "Track", isOlympicSport: true)
 print(running.confirmation)
 
+// Property observers
+
+struct Progress {
+    var task: String
+    var amount: Int {
+        didSet{
+            print("\(task) is \(amount)% complete")
+        }
+    }
+}
+
+var progress = Progress(task:"Buying car", amount:10)
+progress.amount = 20
+progress.amount = 70
+progress.amount = 100
+
 
