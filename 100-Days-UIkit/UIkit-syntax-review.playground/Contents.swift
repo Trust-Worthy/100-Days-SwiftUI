@@ -198,6 +198,29 @@ travelTrailingClosure { // Trailing closure syntax is supposedly really common
     print("I am traveling traveling traveling")
 }
 
+// Using closures as params when they accept params
+
+func travelClosureParam(action: (String) -> Void) {
+    print("About to travel")
+    action("London")
+    print("Done traveling for a while.")
+}
+
+travelClosureParam { (place: String) in // Trailing closure syntax
+    print("I am going to travel to \(place)!!!")
+}
+
+// closure param that takes a param and returns a value
+
+func travelReturn(action: (String) -> String) {
+    print("Doing my ting")
+    let going = action("Chelsea England")
+    print("Definitely pulling up to \(going)")
+}
+
+travelReturn { (place: String) -> String in
+    return "\(place) because going to new places is madd fun"
+}
 
 
 
