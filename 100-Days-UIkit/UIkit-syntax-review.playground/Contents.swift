@@ -177,13 +177,26 @@ let drivingClosure = { (place: String) -> String in
     return "I am driving to \(place) in my new BMW"
 }
 
-func travel(action: (String) -> String) {
+func travel(closure action: (String) -> String) {
     print("I'm preparing to travel. Putting bags in car.")
     print(action("SF"))
     print("Just made it home. I am done driving for the day!")
 }
 
-travel(action: drivingClosure)
+travel(closure: drivingClosure)
+
+// Trailing closure syntax
+// I think this syntax is the hardest to get used to
+
+func travelTrailingClosure(action: () -> Void) {
+    print("About to travel")
+    action()
+    print("Done traveling")
+}
+
+travelTrailingClosure { // Trailing closure syntax is supposedly really common
+    print("I am traveling traveling traveling")
+}
 
 
 
