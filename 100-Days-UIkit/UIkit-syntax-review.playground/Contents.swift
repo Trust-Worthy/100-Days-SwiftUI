@@ -350,10 +350,32 @@ struct User {
     
     init() {
         username = "NONE"
+        print("Creating a new user")
     }
 }
 
 var jim = User()
 jim.username = "Jim"
 print(jim.username)
+
+// using the self keyword to refer to the instance
+
+struct Person1 {
+    var name: String {
+        didSet {
+            print("\(name) was just added to the list.")
+        }
+        willSet {
+            print("\(name) is about to be added to the list.")
+        }
+    }
+    
+    init(name: String) {
+        print("\(name) just showed up to the party!!!")
+        self.name = name
+    }
+}
+
+var jeff = Person1(name: "jeff")
+jeff.name = "Jim"
 
