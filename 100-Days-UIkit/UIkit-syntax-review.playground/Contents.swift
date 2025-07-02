@@ -271,3 +271,14 @@ countSchool("2nd")
 countSchool("3nd")
 countSchool("4nd")
 countSchool("5nd")
+
+
+// Getting into structs review
+
+struct Sport {
+    var name: String // make sure to put the type of the struct
+}
+
+var tennis = Sport(name:"Tennis")
+tennis.name = "Table Tennis"
+print(tennis.name)
