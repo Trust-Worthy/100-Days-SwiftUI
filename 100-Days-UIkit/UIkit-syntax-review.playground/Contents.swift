@@ -61,4 +61,20 @@ func yearAlbumReleased(name: String) -> Int? {
     return nil
 }
 
+// returning values
 
+func square2(number: Int) -> Int {
+    return number * number
+}
+
+
+let result = square2(number: 8)
+print(result)
+
+// parameter labels
+
+func sayHello(to name: String) {
+    print("Hello \(name)")
+}
+
+sayHello(to: "James")
