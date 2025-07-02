@@ -214,7 +214,7 @@ travelClosureParam { (place: String) in // Trailing closure syntax
 
 func travelReturn(action: (String) -> String) {
     print("Doing my ting")
-    let going = action("Chelsea England")
+    let going = action("London")
     print("Definitely pulling up to \(going)")
 }
 
@@ -228,6 +228,30 @@ travelReturn {
     return "How are you doing \($0) my dawwwg?"
 }
 
+// closure example with more than one param
+func travelMultParams(action: (String, Int) -> String)  {
+    print("About to travel at a specific speed.")
+    let phrase = action("Egypt", 60)
+    print(phrase)
+    print("That was a dope trip to AFrica!!")
+}
 
+travelMultParams {
+    return "Going on a dope trip to \($0) at \($1)mph"
+}
+
+// returning closures from functions is actually atrocious
+
+func travelRetFunc() -> (String) -> String {
+    return {
+        "I am going to travel to \($0)"
+    }
+}
+
+let message = travelRetFunc()
+print(message("India"))
+
+let weirdCode = travelRetFunc()("Dubai")
+print(weirdCode)
 
 
