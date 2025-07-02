@@ -97,5 +97,15 @@ func greetDefParams(name: String, nicely: Bool = true) {
     }
 }
 
-
 greetDefParams(name: "Jimmy", nicely: false)
+
+// Variadic functions
+
+func squareVariadic(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+squareVariadic(numbers: 2,3,4,5)
+
+
