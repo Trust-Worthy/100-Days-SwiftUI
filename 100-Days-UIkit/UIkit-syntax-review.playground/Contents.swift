@@ -326,3 +326,20 @@ struct City {
 let SF = City(population: 9_000_000)
 print(SF.gimmeTaxes())
 
+// mutating funcs exist to tell swift when a method should be able to change a varaible
+
+struct Person {
+    var name: String {
+        didSet {
+            print("Name was changed to \(name)")
+        }
+    }
+    
+    mutating func makeAnon() {
+        name = "Anonymous hacker..."
+    }
+}
+
+var hacker = Person(name: "Bad BOI")
+hacker.makeAnon()
+
