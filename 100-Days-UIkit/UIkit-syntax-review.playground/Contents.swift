@@ -153,6 +153,15 @@ let driving = {
 driving()
 driving()
 
+// accepting parameters in a closure
+
+
+let drivingParam = { (place: String) in
+    print("I am driving to \(place)")
+}
+
+drivingParam("London")
+
 
 
 
