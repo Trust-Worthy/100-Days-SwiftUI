@@ -222,5 +222,12 @@ travelReturn { (place: String) -> String in
     return "\(place) because going to new places is madd fun"
 }
 
+// learning about closure shorthand parameter names when swift can infer the arguements
+
+travelReturn {
+    return "How are you doing \($0) my dawwwg?"
+}
+
+
 
 
