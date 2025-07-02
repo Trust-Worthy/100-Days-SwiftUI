@@ -108,4 +108,22 @@ func squareVariadic(numbers: Int...) {
 }
 squareVariadic(numbers: 2,3,4,5)
 
+// Writing throwing functions
+
+enum PasswordError: Error {
+    case obvious
+}
+
+func checkPassword(password: String) throws -> Bool {
+    
+    if password.count < 12 {
+        throw PasswordError.obvious
+    } else {
+        return true
+    }
+}
+checkPassword(password: "hihihisdfasdfasdfas")
+
+
+
 
