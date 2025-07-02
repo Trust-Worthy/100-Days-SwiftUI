@@ -171,6 +171,20 @@ let drivingWithReturn = { (place: String) -> String in
 let vroom = drivingWithReturn("Africa")
 print(vroom)
 
+// taking in closures as arguements to other functions / closures
+
+let drivingClosure = { (place: String) -> String in
+    return "I am driving to \(place) in my new BMW"
+}
+
+func travel(action: (String) -> String) {
+    print("I'm preparing to travel. Putting bags in car.")
+    print(action("SF"))
+    print("Just made it home. I am done driving for the day!")
+}
+
+travel(action: drivingClosure)
+
 
 
 
