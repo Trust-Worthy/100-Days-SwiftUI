@@ -78,3 +78,11 @@ func sayHello(to name: String) {
 }
 
 sayHello(to: "James")
+
+// Omitting parameter labels
+
+func greet(_ name: String) {
+    print("I am greeting you \(name) squad gang")
+}
+
+greet("Karl")
