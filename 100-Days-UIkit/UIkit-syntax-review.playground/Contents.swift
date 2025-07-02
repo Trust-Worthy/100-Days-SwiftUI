@@ -313,4 +313,16 @@ progress.amount = 20
 progress.amount = 70
 progress.amount = 100
 
+// methods --> functions that belong to structs / classes
+
+struct City {
+    var population: Int
+    
+    func gimmeTaxes() -> Int {
+        return population * 1000
+    }
+}
+
+let SF = City(population: 9_000_000)
+print(SF.gimmeTaxes())
 
