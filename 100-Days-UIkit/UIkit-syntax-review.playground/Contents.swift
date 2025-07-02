@@ -255,3 +255,19 @@ let weirdCode = travelRetFunc()("Dubai")
 print(weirdCode)
 
 
+// capturing values in functions that return closures
+
+func travelCapture() -> (String) -> Void {
+    var counter = 1
+    
+    return  {
+        print("\(counter). Going to school on the \($0) of the month")
+        counter += 1
+    }
+}
+
+let countSchool = travelCapture()
+countSchool("2nd")
+countSchool("3nd")
+countSchool("4nd")
+countSchool("5nd")
