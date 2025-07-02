@@ -162,6 +162,14 @@ let drivingParam = { (place: String) in
 
 drivingParam("London")
 
+// returning values from a closure
+
+let drivingWithReturn = { (place: String) -> String in
+    return "I am driving to \(place). Around the world in 80 days."
+}
+
+let vroom = drivingWithReturn("Africa")
+print(vroom)
 
 
 
