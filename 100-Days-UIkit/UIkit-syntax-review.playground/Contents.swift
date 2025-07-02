@@ -277,8 +277,24 @@ countSchool("5nd")
 
 struct Sport {
     var name: String // make sure to put the type of the struct
+    
+    // Computed Properties are powerful toos
+    var isOlympicSport: Bool
+    
+    var confirmation: String {
+        if isOlympicSport {
+            return "\(name) is an Olympic sport. You can win medals"
+        } else {
+            return "\(name) is not an Olympic sport. You can't win any medals"
+        }
+    }
 }
 
-var tennis = Sport(name:"Tennis")
+var tennis = Sport(name:"Tennis", isOlympicSport: false)
 tennis.name = "Table Tennis"
 print(tennis.name)
+
+var running = Sport(name: "Track", isOlympicSport: true)
+print(running.confirmation)
+
+
