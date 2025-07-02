@@ -122,7 +122,15 @@ func checkPassword(password: String) throws -> Bool {
         return true
     }
 }
-checkPassword(password: "hihihisdfasdfasdfas")
+// running throwing functions
+
+do {
+    try checkPassword(password: "hihihisddfdf")
+    print("That password is maadd strong")
+} catch {
+    print("That is a bad password my friend")
+}
+
 
 
 
