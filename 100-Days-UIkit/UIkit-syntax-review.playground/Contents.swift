@@ -343,3 +343,17 @@ struct Person {
 var hacker = Person(name: "Bad BOI")
 hacker.makeAnon()
 
+// Creating my own inits for structs
+
+struct User {
+    var username: String
+    
+    init() {
+        username = "NONE"
+    }
+}
+
+var jim = User()
+jim.username = "Jim"
+print(jim.username)
+
