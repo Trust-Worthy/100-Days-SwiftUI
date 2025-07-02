@@ -131,6 +131,18 @@ do {
     print("That is a bad password my friend")
 }
 
+// reviewing inout parameters
+
+func doubleInPlace(num: inout Int) {
+    num*=2
+}
+
+var myNum = 10
+
+doubleInPlace(num: &myNum)
+doubleInPlace(num: &myNum)
+print("myNum is \(myNum)")
+
 
 
 
