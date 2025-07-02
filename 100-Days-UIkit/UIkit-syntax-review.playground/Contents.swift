@@ -143,6 +143,16 @@ doubleInPlace(num: &myNum)
 doubleInPlace(num: &myNum)
 print("myNum is \(myNum)")
 
+// basic closure
+// a closure is just a function assigned to variable
+
+let driving = {
+    print("I am driving down the highway... Oh no the Ops is coming!!")
+}
+
+driving()
+driving()
+
 
 
 
