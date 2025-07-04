@@ -407,3 +407,22 @@ var markZuck = StudentSTU(name: "Mark zuck")
 
 print(StudentSTU.classSize)
 
+// Acess controls
+
+struct Person2 {
+    private var id: Int // can only be read inside the struct
+    var name: String
+    
+    init(name: String, id: Int) {
+        self.name = name
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My name is \(name) and my social is \(id)"
+    }
+}
+
+var specialAgent = Person2(name: "Tom", id: 12345)
+
+print(specialAgent.identify())
