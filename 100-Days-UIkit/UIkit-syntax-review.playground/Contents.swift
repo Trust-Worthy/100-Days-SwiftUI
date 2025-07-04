@@ -389,4 +389,21 @@ var bobby = Person1(name: "bobby")
 bobby.familyTree
 
 
+// Static properties and methods
+
+struct StudentSTU {
+    var name: String
+    
+    nonisolated(unsafe) static var classSize = 0
+    
+    init(name: String) {
+        self.name = name
+        StudentSTU.classSize += 1
+    }
+}
+
+var jeffBezos = StudentSTU(name: "jeff Bez")
+var markZuck = StudentSTU(name: "Mark zuck")
+
+print(StudentSTU.classSize)
 
