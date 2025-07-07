@@ -582,3 +582,23 @@ extension Collection {
 
 pythons.summarize()
 beatles.summarize()
+
+// Protocol oriented programming
+
+protocol IdentifiableOP {
+    var id: String {get set}
+    func identify()
+}
+
+extension IdentifiableOP {
+    func identify() {
+        print("My id is \(self.id)")
+    }
+}
+
+struct UserProtocolOP: IdentifiableOP {
+    var id: String
+}
+
+let uzer = UserProtocolOP(id: "24234")
+uzer.identify()
