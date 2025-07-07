@@ -705,9 +705,9 @@ class BigDAWG: Animal {
 }
 class Fishy: Animal{}
 
-let animales = [BigDAWG(), Fishy(), BigDAWG(), Fishy()]
+let animales = [BigDAWG(), Fishy(), BigDAWG(), Fishy()] // this array is of type Animal !!!
 
-for animal in animales {
+for animal in animales { // typecasting from type animal to type BigDAWG
     if let dog = animal as? BigDAWG { // use the as keyword when typecasting!!
         dog.makeNoise()
     }
