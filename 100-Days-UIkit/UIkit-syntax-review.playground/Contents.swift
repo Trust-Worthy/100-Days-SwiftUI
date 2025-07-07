@@ -478,3 +478,27 @@ let singerCopy = singer
 singerCopy.name = "Jay z"
 print(singerCopy.name)
 print(singer.name)
+
+// learning about deinitializers
+
+class Person3 {
+    var name: String
+    
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func greet() {
+        print("Hi, I'm just joining the class. My name is \(name)")
+    }
+    
+    deinit {
+        print("I don't like this class. I'm transferring to another school!")
+    }
+}
+
+for i in 1...3 {
+    var peep = Person3(name: "bonquisha")
+    peep.greet()
+}
