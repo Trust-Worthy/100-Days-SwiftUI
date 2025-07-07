@@ -663,3 +663,9 @@ func username(for id: Int) -> String? {
 }
 
 let user3 = username(for: 234) ?? "Anonymous"
+
+// optional chainging is super usefile
+
+let names = ["John", "Paul", "George", "Ringo"]
+
+let beatle = names.first?.uppercased()
