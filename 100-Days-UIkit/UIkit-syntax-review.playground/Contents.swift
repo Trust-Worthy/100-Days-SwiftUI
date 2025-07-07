@@ -502,3 +502,12 @@ for i in 1...3 {
     var peep = Person3(name: "bonquisha")
     peep.greet()
 }
+
+// you can change properties of a constant class (not the same with a strcut you need mutating keyword)
+
+class Person4 {
+    var name: String = "Taylor Swift"
+}
+
+let person4 = Person4()
+person4.name = "DJ Khaled ... We the best music"
