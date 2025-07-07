@@ -669,3 +669,11 @@ let user3 = username(for: 234) ?? "Anonymous"
 let names = ["John", "Paul", "George", "Ringo"]
 
 let beatle = names.first?.uppercased()
+
+// going to practice the optional try
+
+if let rezRE = try? checkPassword(password: "passwordasfsdf") {
+    print("Result was \(rezRE)")
+} else {
+    print("BRUH")
+}
