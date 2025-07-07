@@ -546,3 +546,21 @@ protocol HasVacation {
 }
 
 protocol Employee: Payable, NeedsTraining, HasVacation {}
+
+// learning about extensions in swift
+// extensions let you add more functionality onto an existing type
+
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+    
+    // adding a computed property
+    var isEven: Bool {
+         return self % 2 == 0
+    }
+}
+
+var num = 10
+num.isEven
+num.squared()
