@@ -531,3 +531,18 @@ func displayID(thing: Identifiable) {
 let userLozer = UserProtocol(id: "123412")
 
 displayID(thing: userLozer)
+
+// Learning about protocol inheritance
+protocol Payable {
+    func calculateWages() -> Int
+}
+
+protocol NeedsTraining {
+    func study()
+}
+
+protocol HasVacation {
+    func takeVacation(days: Int)
+}
+
+protocol Employee: Payable, NeedsTraining, HasVacation {}
