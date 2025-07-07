@@ -650,3 +650,16 @@ let valu = Int(str)! // I know that 5 is an integer value
 
 // implicitly unwrapped optionals
 var numberr: String! = nil
+
+// learning about nil coalescing in Swift --> which allows you
+// to provide a default value
+
+func username(for id: Int) -> String? {
+    if id == 1 {
+        return "Johnny Cash"
+    } else {
+        return nil
+    }
+}
+
+let user3 = username(for: 234) ?? "Anonymous"
