@@ -627,7 +627,26 @@ func greetOptional(_ name: String?) {
     
     print("Hello there \(unwrappedName)")
 }
-
+    
 var Paul: String? = nil
 greetOptional(Paul)
 
+func doubleIt(number: Int?) -> Int? { // this function returns an optional
+    guard let number = number else {
+        return nil // I can use if let for this part
+    }
+    
+    return number * number
+}
+
+var dopeNum = 5
+
+if let doubledVal = doubleIt(number: dopeNum) {
+    print("The double dope number is.... \(doubledVal)")
+}
+// learning about force unwrapping
+let str = "5"
+let valu = Int(str)! // I know that 5 is an integer value
+
+// implicitly unwrapped optionals
+var numberr: String! = nil
