@@ -584,6 +584,7 @@ pythons.summarize()
 beatles.summarize()
 
 // Protocol oriented programming
+// I can write extensions for protocols to provide default implementations
 
 protocol IdentifiableOP {
     var id: String {get set}
@@ -602,3 +603,8 @@ struct UserProtocolOP: IdentifiableOP {
 
 let uzer = UserProtocolOP(id: "24234")
 uzer.identify()
+
+// handling missing data
+var bage: Int? = nil
+
+bage = 12
