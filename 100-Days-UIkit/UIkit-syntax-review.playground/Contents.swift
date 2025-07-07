@@ -407,7 +407,7 @@ var markZuck = StudentSTU(name: "Mark zuck")
 
 print(StudentSTU.classSize)
 
-// Acess controls
+// Access controls
 
 struct Person2 {
     private var id: Int // can only be read inside the struct
@@ -426,3 +426,19 @@ struct Person2 {
 var specialAgent = Person2(name: "Tom", id: 12345)
 
 print(specialAgent.identify())
+
+// Refreshing on classes
+
+
+class Dog {
+    var name: String
+    var breed: String
+    
+    init(name: String, breed: String) {
+        self.name = name
+        self.breed = breed
+    }
+}
+
+let poppy = Dog(name: "Poppy", breed: "poodle")
+
