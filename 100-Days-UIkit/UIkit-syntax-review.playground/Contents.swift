@@ -693,4 +693,22 @@ struct Person5 {
     }
 }
 
-var bill = Person5(id: "2421") 
+var bill = Person5(id: "2421")
+//print(bill.id) this would crash the code
+
+// typecasting ! super important in any programming language
+class Animal {}
+class BigDAWG: Animal {
+    func makeNoise() {
+        print("WoOOOF Wofff")
+    }
+}
+class Fishy: Animal{}
+
+let animales = [BigDAWG(), Fishy(), BigDAWG(), Fishy()]
+
+for animal in animales {
+    if let dog = animal as? BigDAWG { // use the as keyword when typecasting!!
+        dog.makeNoise()
+    }
+}
