@@ -461,3 +461,6 @@ class Poodle: Dog {
 
 let hii = Poodle(name: "hii")
 hii.makeNoise()
+// making a final class is really easy
+
+final class finalClassEx {}
