@@ -617,3 +617,17 @@ if let unwrapped = nameGame {
 } else {
     print("This is a nil string ....")
 }
+
+// unwrapping with guard let
+func greetOptional(_ name: String?) {
+    guard let unwrappedName = name else {
+        print("You didn't provide a name")
+        return
+    }
+    
+    print("Hello there \(unwrappedName)")
+}
+
+var Paul: String? = nil
+greetOptional(Paul)
+
