@@ -608,3 +608,12 @@ uzer.identify()
 var bage: Int? = nil
 
 bage = 12
+
+// unwrapping optionals safely
+var nameGame: String? = nil
+
+if let unwrapped = nameGame {
+    print("The unwrapped string has \(unwrapped.count) chars")
+} else {
+    print("This is a nil string ....")
+}
