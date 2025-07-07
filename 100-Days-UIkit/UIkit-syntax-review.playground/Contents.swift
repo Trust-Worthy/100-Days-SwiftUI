@@ -464,3 +464,17 @@ hii.makeNoise()
 // making a final class is really easy
 
 final class finalClassEx {}
+
+// learning about copying classes --> a copy of a class is just another reference to the
+// original... unless you specially make a deep copy
+
+class Singer {
+    var name = "Tay Tay"
+}
+let singer = Singer()
+
+
+let singerCopy = singer
+singerCopy.name = "Jay z"
+print(singerCopy.name)
+print(singer.name)
