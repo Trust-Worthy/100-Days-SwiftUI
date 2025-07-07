@@ -677,3 +677,20 @@ if let rezRE = try? checkPassword(password: "passwordasfsdf") {
 } else {
     print("BRUH")
 }
+
+
+// failable initializers
+
+struct Person5 {
+    var id: String
+    
+    init?(id: String) {
+        if id.count == 9 {
+            self.id = id
+        } else {
+            return nil
+        }
+    }
+}
+
+var bill = Person5(id: "2421") 
