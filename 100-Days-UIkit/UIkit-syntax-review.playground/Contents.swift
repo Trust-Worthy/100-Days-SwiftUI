@@ -511,3 +511,23 @@ class Person4 {
 
 let person4 = Person4()
 person4.name = "DJ Khaled ... We the best music"
+
+// personally one of my favorite swift features
+// I can imagine using this for a lot of secure software development
+
+// differet objects can conform to a protocol or adopt it
+protocol Identifiable {
+    var id: String {get set}
+}
+
+struct UserProtocol: Identifiable {
+    var id: String // has to match the protocol
+}
+
+func displayID(thing: Identifiable) {
+    print("My id is \(thing.id)")
+}
+
+let userLozer = UserProtocol(id: "123412")
+
+displayID(thing: userLozer)
