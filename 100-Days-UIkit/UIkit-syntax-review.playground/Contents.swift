@@ -442,3 +442,12 @@ class Dog {
 
 let poppy = Dog(name: "Poppy", breed: "poodle")
 
+// refresh on class inheritance in swift!!
+class Poodle: Dog {
+    
+    init(name: String) {
+        super.init(name: name, breed: "Poodle")
+    }
+}
+
+let hii = Poodle(name: "hii")
