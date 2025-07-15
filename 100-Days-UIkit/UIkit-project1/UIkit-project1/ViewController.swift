@@ -15,6 +15,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        // Get access to files
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         
@@ -41,7 +43,12 @@ class ViewController: UITableViewController {
         return cell
     }
     
+    
+    // This function directs to another view controller
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // most important line here
+        // basically if user selects one of the cell take them to a detail view controlelr where the selected image aligns with the index
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
             
