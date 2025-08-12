@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		675F66302E4B9B7B0095BEAB /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F662C2E4B9B7B0095BEAB /* nssl0049.jpg */; };
+		675F66312E4B9B7B0095BEAB /* nssl0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F66282E4B9B7B0095BEAB /* nssl0042.jpg */; };
+		675F66322E4B9B7B0095BEAB /* nssl0041.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F66272E4B9B7B0095BEAB /* nssl0041.jpg */; };
+		675F66332E4B9B7B0095BEAB /* nssl0091.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F662E2E4B9B7B0095BEAB /* nssl0091.jpg */; };
+		675F66342E4B9B7B0095BEAB /* nssl0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F662D2E4B9B7B0095BEAB /* nssl0051.jpg */; };
+		675F66352E4B9B7B0095BEAB /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F66292E4B9B7B0095BEAB /* nssl0043.jpg */; };
+		675F66362E4B9B7B0095BEAB /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F66252E4B9B7B0095BEAB /* nssl0033.jpg */; };
+		675F66372E4B9B7B0095BEAB /* nssl0046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F662B2E4B9B7B0095BEAB /* nssl0046.jpg */; };
+		675F66382E4B9B7B0095BEAB /* nssl0045.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F662A2E4B9B7B0095BEAB /* nssl0045.jpg */; };
+		675F66392E4B9B7B0095BEAB /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 675F66262E4B9B7B0095BEAB /* nssl0034.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		675F65F82E4B9A2F0095BEAB /* storm-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "storm-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		675F66252E4B9B7B0095BEAB /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
+		675F66262E4B9B7B0095BEAB /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
+		675F66272E4B9B7B0095BEAB /* nssl0041.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0041.jpg; sourceTree = "<group>"; };
+		675F66282E4B9B7B0095BEAB /* nssl0042.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0042.jpg; sourceTree = "<group>"; };
+		675F66292E4B9B7B0095BEAB /* nssl0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0043.jpg; sourceTree = "<group>"; };
+		675F662A2E4B9B7B0095BEAB /* nssl0045.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0045.jpg; sourceTree = "<group>"; };
+		675F662B2E4B9B7B0095BEAB /* nssl0046.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0046.jpg; sourceTree = "<group>"; };
+		675F662C2E4B9B7B0095BEAB /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
+		675F662D2E4B9B7B0095BEAB /* nssl0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0051.jpg; sourceTree = "<group>"; };
+		675F662E2E4B9B7B0095BEAB /* nssl0091.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0091.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		675F660A2E4B9A310095BEAB /* Exceptions for "storm-viewer" folder in "storm-viewer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 675F65F72E4B9A2F0095BEAB /* storm-viewer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		675F65FA2E4B9A2F0095BEAB /* storm-viewer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				675F660A2E4B9A310095BEAB /* Exceptions for "storm-viewer" folder in "storm-viewer" target */,
+			);
+			path = "storm-viewer";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		675F65F52E4B9A2F0095BEAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		675F65EF2E4B9A2F0095BEAB = {
+			isa = PBXGroup;
+			children = (
+				675F662F2E4B9B7B0095BEAB /* Content */,
+				675F65FA2E4B9A2F0095BEAB /* storm-viewer */,
+				675F65F92E4B9A2F0095BEAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		675F65F92E4B9A2F0095BEAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				675F65F82E4B9A2F0095BEAB /* storm-viewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		675F662F2E4B9B7B0095BEAB /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				675F66252E4B9B7B0095BEAB /* nssl0033.jpg */,
+				675F66262E4B9B7B0095BEAB /* nssl0034.jpg */,
+				675F66272E4B9B7B0095BEAB /* nssl0041.jpg */,
+				675F66282E4B9B7B0095BEAB /* nssl0042.jpg */,
+				675F66292E4B9B7B0095BEAB /* nssl0043.jpg */,
+				675F662A2E4B9B7B0095BEAB /* nssl0045.jpg */,
+				675F662B2E4B9B7B0095BEAB /* nssl0046.jpg */,
+				675F662C2E4B9B7B0095BEAB /* nssl0049.jpg */,
+				675F662D2E4B9B7B0095BEAB /* nssl0051.jpg */,
+				675F662E2E4B9B7B0095BEAB /* nssl0091.jpg */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		675F65F72E4B9A2F0095BEAB /* storm-viewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 675F660B2E4B9A310095BEAB /* Build configuration list for PBXNativeTarget "storm-viewer" */;
+			buildPhases = (
+				675F65F42E4B9A2F0095BEAB /* Sources */,
+				675F65F52E4B9A2F0095BEAB /* Frameworks */,
+				675F65F62E4B9A2F0095BEAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				675F65FA2E4B9A2F0095BEAB /* storm-viewer */,
+			);
+			name = "storm-viewer";
+			packageProductDependencies = (
+			);
+			productName = "storm-viewer";
+			productReference = 675F65F82E4B9A2F0095BEAB /* storm-viewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		675F65F02E4B9A2F0095BEAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					675F65F72E4B9A2F0095BEAB = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 675F65F32E4B9A2F0095BEAB /* Build configuration list for PBXProject "storm-viewer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 675F65EF2E4B9A2F0095BEAB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 675F65F92E4B9A2F0095BEAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				675F65F72E4B9A2F0095BEAB /* storm-viewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		675F65F62E4B9A2F0095BEAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675F66302E4B9B7B0095BEAB /* nssl0049.jpg in Resources */,
+				675F66312E4B9B7B0095BEAB /* nssl0042.jpg in Resources */,
+				675F66322E4B9B7B0095BEAB /* nssl0041.jpg in Resources */,
+				675F66332E4B9B7B0095BEAB /* nssl0091.jpg in Resources */,
+				675F66342E4B9B7B0095BEAB /* nssl0051.jpg in Resources */,
+				675F66352E4B9B7B0095BEAB /* nssl0043.jpg in Resources */,
+				675F66362E4B9B7B0095BEAB /* nssl0033.jpg in Resources */,
+				675F66372E4B9B7B0095BEAB /* nssl0046.jpg in Resources */,
+				675F66382E4B9B7B0095BEAB /* nssl0045.jpg in Resources */,
+				675F66392E4B9B7B0095BEAB /* nssl0034.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		675F65F42E4B9A2F0095BEAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		675F660C2E4B9A310095BEAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKTJKHD762;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "storm-viewer/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jmbdev.storm-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		675F660D2E4B9A310095BEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RKTJKHD762;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "storm-viewer/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jmbdev.storm-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		675F660E2E4B9A310095BEAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RKTJKHD762;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		675F660F2E4B9A310095BEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RKTJKHD762;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		675F65F32E4B9A2F0095BEAB /* Build configuration list for PBXProject "storm-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675F660E2E4B9A310095BEAB /* Debug */,
+				675F660F2E4B9A310095BEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		675F660B2E4B9A310095BEAB /* Build configuration list for PBXNativeTarget "storm-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675F660C2E4B9A310095BEAB /* Debug */,
+				675F660D2E4B9A310095BEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 675F65F02E4B9A2F0095BEAB /* Project object */;
+}
