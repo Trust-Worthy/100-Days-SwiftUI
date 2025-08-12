@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = selectedImage // both are optionals so no need to unwrap
+        
         // checks and unwraps the optional for the image name
         if let imageToLoad = selectedImage {
             // if imageToLoad does have a value it will select it to display it
@@ -25,6 +27,17 @@ class DetailViewController: UIViewController {
         
     }
     
-
+    // Allow the user to see the image in full screen
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.hidesBarsOnTap = false
+    }
 
 }

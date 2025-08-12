@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Storm Viewer"
         
         let fm = FileManager.default // built in system type for working with files
         
