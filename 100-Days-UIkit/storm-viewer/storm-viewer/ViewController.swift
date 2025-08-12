@@ -14,6 +14,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         title = "Storm Viewer"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         let fm = FileManager.default // built in system type for working with files
         

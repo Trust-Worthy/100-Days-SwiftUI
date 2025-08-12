@@ -16,6 +16,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         title = selectedImage // both are optionals so no need to unwrap
+        navigationItem.largeTitleDisplayMode = .never // no big titles on this view controller
+        
         
         // checks and unwraps the optional for the image name
         if let imageToLoad = selectedImage {
