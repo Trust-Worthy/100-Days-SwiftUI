@@ -46,6 +46,19 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: Key function for using multiple screen
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // if the user selects a specific cell
+        // cast is to a detail view controller using the "Detail" identifier
+        // use the selectedImage property and set it using the pictures array
+        // push the new view controller to the nav controller
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.selectedImage = pictures[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
 
 }
