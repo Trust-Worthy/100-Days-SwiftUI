@@ -68,6 +68,9 @@
                             <constraint firstItem="Qfn-RC-WtL" firstAttribute="leading" secondItem="Vbh-CK-SZI" secondAttribute="leading" id="yFV-L0-Gef"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Qfn-RC-WtL" id="5Q4-RY-qc1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0J-NG-nhy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
