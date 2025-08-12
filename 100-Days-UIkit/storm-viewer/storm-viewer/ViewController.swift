@@ -32,7 +32,17 @@ class ViewController: UITableViewController {
             }
         }
         
+        pictures = pictures.sorted { extractNumber(from: $0) < extractNumber(from: $1)}
         print(pictures)
+    }
+    
+    func extractNumber(from filename: String) -> Int {
+        let pattern = "(\\d+)(?=\\.jpg$)" // capture digits before ".jpg"
+        if let range = filename.range(of: pattern, options: .regularExpression) {
+            return Int(filename[range]) ?? 0
+        }
+        
+        return 0
     }
     
     // Create then number of cells there are for the number of entries in the pictures array
