@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
-    
+    var questionsAsked = 0
+    var correctlyAnswered = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +40,9 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(action: UIAlertAction!) {
+        if questionsAsked == 10 {
+            showFinalAlert()
+        }
         
         countries.shuffle() // mix up the flags and randomize them
         
@@ -52,6 +56,17 @@ class ViewController: UIViewController {
         
         title = countries[correctAnswer].uppercased()
         title! += " || Score: \(score)"
+        
+        
+        
+        questionsAsked += 1
+    }
+    
+    func showFinalAlert() {
+        
+        let ac = UIAlertController(title: "Game Over", message: "You answered 10 questions and got \(correctlyAnswered) correct", preferredStyle: .alert)
+        
+        present(ac, animated: true)
     }
     
     // IB = "interface builder"
@@ -62,12 +77,13 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
+            correctlyAnswered += 1
         } else {
             title = "Wrong"
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        let ac = UIAlertController(title: title, message: "Your score is \(score). You chose \(countries[sender.tag])", preferredStyle: .alert)
         
         // use action to choose option
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
