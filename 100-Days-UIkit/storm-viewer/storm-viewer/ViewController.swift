@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     var pictures = [String]()
 
     override func viewDidLoad() {
@@ -31,6 +31,20 @@ class ViewController: UIViewController {
         }
         
         print(pictures)
+    }
+    
+    // Create then number of cells there are for the number of entries in the pictures array
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pictures.count
+    }
+    
+    // specify what each row should look like
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath) // the identifier is really important. has to be marked in the story board too
+        
+        cell.textLabel?.text = pictures[indexPath.row]
+        
+        return cell
     }
 
 
