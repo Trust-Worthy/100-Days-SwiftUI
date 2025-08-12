@@ -34,11 +34,11 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
-        askQuestion()
+        askQuestion(action: nil)
         
     }
     
-    func askQuestion() {
+    func askQuestion(action: UIAlertAction!) {
         
         countries.shuffle() // mix up the flags and randomize them
         
@@ -52,7 +52,30 @@ class ViewController: UIViewController {
         
         title = countries[correctAnswer].uppercased()
     }
-
+    
+    // IB = "interface builder"
+    // all 3 buttons are calling the same function
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
+        
+        if sender.tag == correctAnswer {
+            title = "Correct"
+            score += 1
+        } else {
+            title = "Wrong"
+            score -= 1
+        }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        
+        // use action to choose option
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        
+        // present our ui alert controller ac
+        present(ac, animated: true)
+    }
+    
+    
 
 }
 
