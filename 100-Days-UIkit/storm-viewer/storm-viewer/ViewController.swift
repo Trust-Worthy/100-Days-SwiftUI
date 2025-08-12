@@ -68,6 +68,7 @@ class ViewController: UITableViewController {
         // push the new view controller to the nav controller
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
+            vc.selectedImageIndex = [indexPath.row, pictures.count]
             navigationController?.pushViewController(vc, animated: true)
         }
     }

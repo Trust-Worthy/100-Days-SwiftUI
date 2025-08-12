@@ -11,11 +11,14 @@ class DetailViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
+    var selectedImageIndex: [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedImage // both are optionals so no need to unwrap
+        title = "Picture \(selectedImageIndex![0] + 1) of \(selectedImageIndex![1])" // both are optionals so no need to unwrap
+        
+        
         navigationItem.largeTitleDisplayMode = .never // no big titles on this view controller
         
         
