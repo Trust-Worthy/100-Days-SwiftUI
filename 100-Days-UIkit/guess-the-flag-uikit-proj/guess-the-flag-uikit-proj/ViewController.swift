@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         
         
         title = countries[correctAnswer].uppercased()
+        title! += " || Score: \(score)"
     }
     
     // IB = "interface builder"
