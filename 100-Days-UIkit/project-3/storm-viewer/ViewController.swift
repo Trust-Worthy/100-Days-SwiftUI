@@ -75,8 +75,20 @@ class ViewController: UITableViewController {
         }
     }
     
-    @objc recApp() {
+    @objc func recApp() {
+        let appURL = URL(string: "https://apps.apple.com/us/app/spotify-music-and-podcasts/id324684580")
         
+        let message = "Check out this cool music app!"
+        
+        let activityVC = UIActivityViewController(activityItems: [message, appURL!], applicationActivities: [])
+        
+        // ipad support
+        if let popover = activityVC.popoverPresentationController {
+            popover.barButtonItem = navigationItem.rightBarButtonItem // where it came from
+        }
+        
+        // present it
+        present(activityVC, animated: true)
     }
 
 
