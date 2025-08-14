@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recApp))
+        
         let fm = FileManager.default // built in system type for working with files
         
         let path = Bundle.main.resourcePath! // sets resource path
@@ -71,6 +73,10 @@ class ViewController: UITableViewController {
             vc.selectedImageIndex = [indexPath.row, pictures.count]
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @objc recApp() {
+        
     }
 
 

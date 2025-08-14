@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
     var selectedImageIndex: [Int]?
-    
+    var imageName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +35,9 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             // if imageToLoad does have a value it will select it to display it
             imageView.image = UIImage(named: imageToLoad)
+            imageName = imageToLoad
         }
+        
         
         
         
@@ -62,8 +64,10 @@ class DetailViewController: UIViewController {
             return
         }
         
+        
+        
         // what to share when shareTapped is called
-        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [image, imageName], applicationActivities: [])
         
         // this thing was shown from the right bar button item
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
