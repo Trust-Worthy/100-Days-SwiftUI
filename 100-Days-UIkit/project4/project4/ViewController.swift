@@ -40,6 +40,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // creating custom title for bar button item instead of a system item
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -68,28 +69,42 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
 
     
+    // @objc becasue of target action system
+    //
     @objc func openTapped() {
+        
+        // creating new alert controller
+        // action sheet is created when Open is pressed
         let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
         
         for website in websites {
+            
+            // action to open one of the websites
             ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
         }
         
-        
+        // hides the alert when cancel is tapped
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
+        // this is used for ipads
+        // where to make the action sheet to be anchored
         ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem // ipad code
         
+        // show the alert controller
         present(ac, animated: true)
     }
+    
     
     // openPage is the handler when the user touches something
     func openPage(action: UIAlertAction) {
         
         // super safe code
+        // sets the title of the action
+        // passing in "website" on line 83 as the title"
         guard let actionTitle = action.title else {return}
-        guard let url = URL(string: "https://" + actionTitle ) else {return} // double force unwrap
+        guard let url = URL(string: "https://" + actionTitle ) else {return}
         
+        // when action is selected it will open the page
         webView.load(URLRequest(url: url))
         
         
