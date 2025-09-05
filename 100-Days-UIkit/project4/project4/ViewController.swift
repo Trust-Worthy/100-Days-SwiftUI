@@ -139,21 +139,42 @@ class ViewController: UIViewController, WKNavigationDelegate {
             progressView.progress = Float(webView.estimatedProgress)
         }
     }
-    
+    // allows me to decide whether I want navigation to happen or not everytime something happens
+    // decision Handler could be a "do you want to enter in your password"
+    // escaping closure --> can happen at a later time so use @escaping keyword
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void) {
         
+        
+        
+        // get the url or the vavigation
         let url = navigationAction.request.url
         
+        
+        // Ignore about:blank and similar system URLs
+        if url?.scheme == "about" {
+            decisionHandler(.allow)
+            return
+        }
+        
+        // check the host
+        // unwrap value of url becasue not all urls have hosts
         if let host = url?.host {
+    
+            // check all the websites in approved list
             for website in websites {
-                if host.contains(website) {
+                
+                // if the host is in the website list
+                if host.contains(website) || host.contains("www." + website){
+                    // allow it to load
                     decisionHandler(.allow)
                     return
                 }
             }
         }
-        
-        decisionHandler(.cancel) // disallow loading
+        // show alert
+        let ac = UIAlertController(title: "This is a dangerous website!!!: \(url?.absoluteString)"  , message: nil, preferredStyle: .alert)
+        present(ac,animated: true)
+        decisionHandler(.cancel) // disallow loading if the host isn't in the approved website
     }
 
 }
