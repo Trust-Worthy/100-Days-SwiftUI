@@ -43,6 +43,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
         // creating custom title for bar button item instead of a system item
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
+        // back button
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBack))
+        // forward button
+        let forwardButton = UIBarButtonItem(title: "Forward", style: .plain, target: self, action: #selector(goForward))
+        
+        navigationItem.leftBarButtonItems = [backButton, forwardButton]
+        
         // .flexible space creates a flex space
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
@@ -59,6 +66,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         // shows the tool bar items
         // toolbarItems come from parent class UIView Controller
         toolbarItems = [progressButton, spacer,refresh] // ui view controller tool bar array
+        
         navigationController?.isToolbarHidden = false
         
         // make sure to remove observer when working in complex apps after calling addobserver
@@ -79,7 +87,20 @@ class ViewController: UIViewController, WKNavigationDelegate {
         // allows users to swipe left or right to go forward backward
         webView.allowsBackForwardNavigationGestures = true
     }
-
+    
+    // MARK: - Actions
+    
+    @objc func goBack() {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @objc func goForward() {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
     
     // @objc becasue of target action system
     //
