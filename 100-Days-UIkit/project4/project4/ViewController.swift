@@ -43,8 +43,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         // creating custom title for bar button item instead of a system item
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
+        // .flexible space creates a flex space
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
         // reloads the webview in place
+        // refresh button --> #selector(webView.reload)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
         
@@ -52,6 +55,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         progressView.sizeToFit() // take up as much space as it needs
         let progressButton = UIBarButtonItem(customView: progressView)
         
+        // shows the tool bar items
+        // toolbarItems come from parent class UIView Controller
         toolbarItems = [progressButton, spacer,refresh] // ui view controller tool bar array
         navigationController?.isToolbarHidden = false
         
@@ -110,10 +115,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
     }
     
+    
     // called when web page has finished loading its page
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         // view controllers title
+        // making the title of the view contoller the title of the website
         title = webView.title
     }
     
