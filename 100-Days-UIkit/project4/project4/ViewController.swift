@@ -6,18 +6,32 @@
 //
 
 import UIKit
-import WebKit
+import WebKit // Webkit framework
 
 // extends from UIViewController and conforms to WKNav
-class ViewController: UIViewController, WKNavigationDelegate{
-    var webView: WKWebView!
-    var progressView: UIProgressView!
-    var websites = ["apple.com","adidas.com"]
+// This viewcontroller class is a uiview contlr (extends) and conforms to weknavdele
+// first one extends second conforms to
+class ViewController: UIViewController, WKNavigationDelegate {
     
+    var webView: WKWebView! // store property for later on
+    var progressView: UIProgressView!
+    var websites = ["apple.com","adidas.com","goshendigitalsecurity.com"]
+    
+    // loadView technically gets called before viewDidLoad
     override func loadView() {
         
+        // create instance of wk class
         webView = WKWebView()
+        
+        // modify navigation deleage
+        // delegation is a programming pattern
+        // delegate - one thing acting in place for another
+        // delegation solution --> tell wk web view when something happens. When any web navigation happens
+        // tell webview what view controller is running
+        // when you set any delegate --> must conform to protocols the delegate has
         webView.navigationDelegate = self
+        
+        // make that view view for view controller
         view = webView
         
     }
@@ -44,8 +58,12 @@ class ViewController: UIViewController, WKNavigationDelegate{
         // must implement
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
+        // creates new url object
         let url = URL(string: "https://" + websites[0])!
+        
+        // wk web views don't load url objects or strings
         webView.load(URLRequest(url: url)) // turns url into url request
+        // allows users to swipe left or right to go forward backward
         webView.allowsBackForwardNavigationGestures = true
     }
 
