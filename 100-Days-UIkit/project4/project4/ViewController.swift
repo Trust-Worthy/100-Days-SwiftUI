@@ -14,7 +14,7 @@ import WebKit // Webkit framework
 class ViewController: UIViewController, WKNavigationDelegate {
     
     var webView: WKWebView! // store property for later on
-    var progressView: UIProgressView!
+    var progressView: UIProgressView! // allows user to see loading
     var websites = ["apple.com","adidas.com","goshendigitalsecurity.com"]
     
     // loadView technically gets called before viewDidLoad
@@ -51,8 +51,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
         
-        progressView = UIProgressView(progressViewStyle: .default)
+        progressView = UIProgressView(progressViewStyle: .bar) // tried the .bar instead of .default
         progressView.sizeToFit() // take up as much space as it needs
+        
         let progressButton = UIBarButtonItem(customView: progressView)
         
         // shows the tool bar items
@@ -60,8 +61,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         toolbarItems = [progressButton, spacer,refresh] // ui view controller tool bar array
         navigationController?.isToolbarHidden = false
         
-        // make sure to remove observer when working in complex apps
+        // make sure to remove observer when working in complex apps after calling addobserver
         // must implement
+        // KVO --> key value observing
+        // please tell me when property X of object y gets changed by anyone at anytime
+        // 1. add webview as observer of property WekWebView.estimatedProgress on the
+        // 4 argws for observer: who observer is, what property to observe, value we want (new), context value
+        // #keyPath allows compiler to check if code is correct
+        // must implement observe value method
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         // creates new url object
@@ -128,6 +135,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         if keyPath == "estimatedProgress" {
             
+            // type cast from double to float
             progressView.progress = Float(webView.estimatedProgress)
         }
     }
