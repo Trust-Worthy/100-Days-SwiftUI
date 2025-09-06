@@ -76,18 +76,32 @@ class ViewController: UITableViewController {
         
         let ac = UIAlertController(title: "Enter Answer", message: nil, preferredStyle: .alert)
         
+        // where user will type in answer
+        // adds new text box to the alert controller
         ac.addTextField()
         
+        
         // using trailing closure syntax
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak ac] action in
+        // both the alert controller and view controller are referenced in the closure
+        // don't want to capture the view ctrlr and ac strongly
+        // stops strong reference cycle
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak ac] _ in // specified input into closure
             
+            // reference to ac may not exist in the future
+            // get the first text field (where user put in answer)
             guard let answer = ac?.textFields?[0].text else {return}
             
+            // reference to self might not exist in the future
             self?.submit(answer)
         }
         
+        
         ac.addAction(submitAction)
         present(ac, animated: true)
+        
+    }
+    
+    func submit(_ answer: String) {
         
     }
     
