@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        
         // getting the path to the txt file
         if let startWordsULR = Bundle.main.url(forResource: "start", withExtension: "txt") {
             
@@ -68,5 +70,27 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    // gets called from right bar button item
+    @objc func promptForAnswer() {
+        
+        let ac = UIAlertController(title: "Enter Answer", message: nil, preferredStyle: .alert)
+        
+        ac.addTextField()
+        
+        // using trailing closure syntax
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak ac] action in
+            
+            guard let answer = ac?.textFields?[0].text else {return}
+            
+            self?.submit(answer)
+        }
+        
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+        
+    }
+    
+    
 }
 
