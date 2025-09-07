@@ -94,7 +94,7 @@ class ViewController: UITableViewController {
             guard let answer = ac?.textFields?[0].text else {return}
             
             // reference to self might not exist in the future
-            self?.submit(answer)
+            self?.submit(answer.lowercased())
         }
         
         
