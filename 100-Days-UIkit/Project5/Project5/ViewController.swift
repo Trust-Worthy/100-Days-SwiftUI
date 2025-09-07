@@ -126,17 +126,46 @@ class ViewController: UITableViewController {
         }
     }
     
-    
+    // can this word be made from the 8 letter starword only using each letter once?
     func isPossible(word: String) -> Bool {
+        // make sure we have a title in nav control
+        guard var tempWord = title?.lowercased() else {return false}
+        
+        // loop over all letters in the word
+        for letter in word {
+            // find the first index where the letter appears in the title / tempword
+            if let position = tempWord.firstIndex(of: letter) {
+                
+                // remove that letter from the tempword
+                tempWord.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        // if all letters have been found and removed
         return true
     }
     
+    // is the word in the usedWords array
     func isOriginal(word: String) -> Bool {
-        return true
+        return !usedWords.contains(word)
     }
     
+    // is this a real english word
     func isReal(word: String) -> Bool {
-        return true
+        
+        let checker = UITextChecker()
+        
+        // check the range I want to scan in my word
+        // nsrange works better with Obj C strings
+        // use utf16 count when working with older
+        let range = NSRange(location: 0, length: word.utf16.count)
+        
+        // word = string to scan , range = how much of word to scan
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        
+        // I care about where any mispelling was found
+        return misspelledRange.location == NSNotFound
     }
  
     
