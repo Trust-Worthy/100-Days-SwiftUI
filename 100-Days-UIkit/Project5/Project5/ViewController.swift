@@ -18,6 +18,8 @@ class ViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startGame))
+        
         // getting the path to the txt file
         if let startWordsULR = Bundle.main.url(forResource: "start", withExtension: "txt") {
             
@@ -41,7 +43,7 @@ class ViewController: UITableViewController {
     
     
     
-    func startGame() {
+    @objc func startGame() {
         
         // sets view controllers title to be a random word in the array
         title = allWords.randomElement()
@@ -54,7 +56,7 @@ class ViewController: UITableViewController {
         // reloadData --> reloads all data and section from scratch
         tableView.reloadData()
     }
-    
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usedWords.count
