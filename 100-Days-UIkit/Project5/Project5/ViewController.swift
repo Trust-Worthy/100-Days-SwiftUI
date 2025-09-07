@@ -137,27 +137,37 @@ class ViewController: UITableViewController {
                         } else {
                             errorTitle = "Can't resue the start word"
                             errorMessage = "Make a word from the start word"
+                            showErrorMessage(errorTitle: errorTitle, errorMessage: errorMessage)
                         }
                         
                     } else {
                         errorTitle = "Word Too Short"
                         errorMessage = "Word must be longer than 3 letters"
+                        showErrorMessage(errorTitle: errorTitle, errorMessage: errorMessage)
                     }
                     
                 } else {
                     errorTitle = "Word not recognized"
                     errorMessage = "You can't just make it up"
+                    showErrorMessage(errorTitle: errorTitle, errorMessage: errorMessage)
                 }
             } else {
                 errorTitle = "Word previously used"
                 errorMessage = "Be more original"
+                showErrorMessage(errorTitle: errorTitle, errorMessage: errorMessage)
             }
         } else {
             guard let title = title else {return}
             
             errorTitle = "Word not Possible"
             errorMessage = "You can't spell that word from (\(title.lowercased()))"
+            showErrorMessage(errorTitle: errorTitle, errorMessage: errorMessage)
         }
+        
+        
+    }
+    
+    func showErrorMessage(errorTitle: String, errorMessage: String) {
         
         let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
         // no handler. just dismisses it when it's tapped
