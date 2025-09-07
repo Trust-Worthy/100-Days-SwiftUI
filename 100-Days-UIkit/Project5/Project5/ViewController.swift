@@ -106,6 +106,8 @@ class ViewController: UITableViewController {
         // make answer lowercase to normalize
         let lowerAnswer = answer.lowercased()
         
+        let errorTitle: String
+        let errorMessage: String
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
@@ -121,9 +123,25 @@ class ViewController: UITableViewController {
                     // this helps with animations
                     // adding one cell is easier than adding a bunch of cells
                     tableView.insertRows(at: [indexPath], with: .automatic)
+                    
+                    return
+                } else {
+                    errorTitle = "Word not recognized"
+                    errorMessage = "You can't just make it up"
                 }
+            } else {
+                errorTitle = "Word previously used"
+                errorMessage = "Be more original"
             }
+        } else {
+            errorTitle = "Word not Possible"
+            errorMessage = "You can't spell that word from (\(title!.lowercased()))"
         }
+        
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        // no handler. just dismisses it when it's tapped
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     // can this word be made from the 8 letter starword only using each letter once?
