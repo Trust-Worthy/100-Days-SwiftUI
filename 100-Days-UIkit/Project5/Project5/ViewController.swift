@@ -103,8 +103,42 @@ class ViewController: UITableViewController {
     
     func submit(_ answer: String) {
         
+        // make answer lowercase to normalize
+        let lowerAnswer = answer.lowercased()
+        
+        
+        if isPossible(word: lowerAnswer) {
+            if isOriginal(word: lowerAnswer) {
+                if isReal(word: lowerAnswer) {
+                    
+                    // insert answer in used words array at position 0 so
+                    // it's at the top of the table view
+                    usedWords.insert(answer, at: 0)
+                    
+                    // insert a row at that position (top of table view)
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    
+                    // this helps with animations
+                    // adding one cell is easier than adding a bunch of cells
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                }
+            }
+        }
     }
     
+    
+    func isPossible(word: String) -> Bool {
+        return true
+    }
+    
+    func isOriginal(word: String) -> Bool {
+        return true
+    }
+    
+    func isReal(word: String) -> Bool {
+        return true
+    }
+ 
     
 }
 
