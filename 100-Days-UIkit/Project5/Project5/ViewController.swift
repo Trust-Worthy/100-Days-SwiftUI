@@ -106,25 +106,44 @@ class ViewController: UITableViewController {
         // make answer lowercase to normalize
         let lowerAnswer = answer.lowercased()
         
+        
+        
+       
+        
         let errorTitle: String
         let errorMessage: String
+        
+        
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
+                    if isLong(word: lowerAnswer) {
+                        if isStartWord(word: lowerAnswer) {
+                            // insert answer in used words array at position 0 so
+                            // it's at the top of the table view
+                            usedWords.insert(answer, at: 0)
+                            
+                            // insert a row at that position (top of table view)
+                            let indexPath = IndexPath(row: 0, section: 0)
+                            
+                            // this helps with animations
+                            // adding one cell is easier than adding a bunch of cells
+                            tableView.insertRows(at: [indexPath], with: .automatic)
+                            
+                            
+                            // if the word is possible exit the method
+                            return
+                        } else {
+                            errorTitle = "Can't resue the start word"
+                            errorMessage = "Make a word from the start word"
+                        }
+                        
+                    } else {
+                        errorTitle = "Word Too Short"
+                        errorMessage = "Word must be longer than 3 letters"
+                    }
                     
-                    // insert answer in used words array at position 0 so
-                    // it's at the top of the table view
-                    usedWords.insert(answer, at: 0)
-                    
-                    // insert a row at that position (top of table view)
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    
-                    // this helps with animations
-                    // adding one cell is easier than adding a bunch of cells
-                    tableView.insertRows(at: [indexPath], with: .automatic)
-                    
-                    return
                 } else {
                     errorTitle = "Word not recognized"
                     errorMessage = "You can't just make it up"
@@ -134,8 +153,10 @@ class ViewController: UITableViewController {
                 errorMessage = "Be more original"
             }
         } else {
+            guard let title = title else {return}
+            
             errorTitle = "Word not Possible"
-            errorMessage = "You can't spell that word from (\(title!.lowercased()))"
+            errorMessage = "You can't spell that word from (\(title.lowercased()))"
         }
         
         let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
@@ -184,6 +205,15 @@ class ViewController: UITableViewController {
         
         // I care about where any mispelling was found
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isLong(word: String) -> Bool {
+        return word.count > 2
+    }
+    
+    func isStartWord(word: String) -> Bool {
+        guard let tempTitle = title?.lowercased() else {return false}
+        return word != tempTitle
     }
  
     
