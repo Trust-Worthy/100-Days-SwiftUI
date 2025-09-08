@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjW-gn-Kaa">
                                 <rect key="frame" x="84" y="189" width="225" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WjW-gn-Kaa" secondAttribute="height" multiplier="75:38" id="rGu-nb-MVk"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVh-i1-Ecg">
                                 <rect key="frame" x="84" y="333" width="225" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YVh-i1-Ecg" secondAttribute="height" multiplier="75:38" id="zsC-G9-ck3"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugT-lq-sY6">
                                 <rect key="frame" x="84" y="477" width="225" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ugT-lq-sY6" secondAttribute="height" multiplier="75:38" id="gwm-5I-Q9m"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -46,6 +55,8 @@
                         <constraints>
                             <constraint firstItem="WjW-gn-Kaa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="3Mo-l8-fzt"/>
                             <constraint firstItem="YVh-i1-Ecg" firstAttribute="leading" secondItem="ugT-lq-sY6" secondAttribute="leading" id="5Y1-ay-9jK"/>
+                            <constraint firstItem="ugT-lq-sY6" firstAttribute="height" secondItem="YVh-i1-Ecg" secondAttribute="height" id="5uC-0Q-J9W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ugT-lq-sY6" secondAttribute="bottom" constant="20" id="AvL-dj-0b3"/>
                             <constraint firstItem="YVh-i1-Ecg" firstAttribute="centerX" secondItem="WjW-gn-Kaa" secondAttribute="centerX" id="Eer-GV-cWe"/>
                             <constraint firstItem="ugT-lq-sY6" firstAttribute="top" secondItem="YVh-i1-Ecg" secondAttribute="bottom" constant="30" id="SAb-Bb-jFN"/>
                             <constraint firstItem="ugT-lq-sY6" firstAttribute="centerX" secondItem="YVh-i1-Ecg" secondAttribute="centerX" id="SzI-eF-Ys9"/>
@@ -53,6 +64,7 @@
                             <constraint firstItem="WjW-gn-Kaa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="fux-T3-q2W"/>
                             <constraint firstItem="WjW-gn-Kaa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iRC-zC-Rzw"/>
                             <constraint firstItem="WjW-gn-Kaa" firstAttribute="leading" secondItem="YVh-i1-Ecg" secondAttribute="leading" id="ly3-xz-n0b"/>
+                            <constraint firstItem="YVh-i1-Ecg" firstAttribute="height" secondItem="ugT-lq-sY6" secondAttribute="height" id="qny-PW-DKM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vpE-6o-3eF"/>
