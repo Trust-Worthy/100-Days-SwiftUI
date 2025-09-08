@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         // no pipe at the end. just leaves white space
         // == 88 means size must be 88 points
         // - space at end of screen must be 10 points or greater near end of screen -
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight)]-[label2(==labelHeight)]-[label3(==labelHeight)]-[label4(==labelHeight)]-[label5(==labelHeight)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight@999)]-[label2(==label1)]-[label3(==label1)]-[label4(==label1)]-[label5(==label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
         
         
     }
