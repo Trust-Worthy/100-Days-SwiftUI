@@ -76,22 +76,28 @@ class ViewController: UIViewController {
         // looping over all the labels --> giving them the same width as main view and height of exactly 88 points
         
         for label in [label1, label2, label3, label4,label5] {
-            label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
             
-            // set the current label as 10 points below bottom of previous
+        // Common constraints for every label
+            NSLayoutConstraint.activate([
+                label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+                label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+                label.heightAnchor.constraint(equalToConstant: 44)
+            ])
+            
+            // Top constraint depends on whether there's a previous label
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
             } else {
-                // this is the top label
-                // put top label directly against the top anchor for the phone!!!
-                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+                // first label sticks to the safe area at the top
+                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
             }
             
-            // previous label become the current one
+            // Update previous for the next loop
             previous = label
-            
+           
         }
+        
+        
     }
 
 
