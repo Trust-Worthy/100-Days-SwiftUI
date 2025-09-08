@@ -49,27 +49,45 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
-        let viewsDictionary = ["label1": label1, "label2":label2,"label3":label3,"label4": label4, "label5":label5]
+//        let viewsDictionary = ["label1": label1, "label2":label2,"label3":label3,"label4": label4, "label5":label5]
+//        
+//        // visual format language VFL
+//        // horizonal
+//        for label in viewsDictionary.keys {
+//            // view = main view for main view controller
+//            // add Constraints adds the contraints to the view
+//            // NS layout constraint converts VFL into actual constraints
+//            // H means horizonal. pipe means edge of the view. brackets are edge of the view
+//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
+//        }
+//        
+//        let metrics = ["labelHeight": 88]
+//        // verical
+//        // - means space --> 10 points by def
+//        // no pipe at the end. just leaves white space
+//        // == 88 means size must be 88 points
+//        // - space at end of screen must be 10 points or greater near end of screen -
+//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight@999)]-[label2(==label1)]-[label3(==label1)]-[label4(==label1)]-[label5(==label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
         
-        // visual format language VFL
-        // horizonal
-        for label in viewsDictionary.keys {
-            // view = main view for main view controller
-            // add Constraints adds the contraints to the view
-            // NS layout constraint converts VFL into actual constraints
-            // H means horizonal. pipe means edge of the view. brackets are edge of the view
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
+        // create optional label because the first label won't have one above it
+        var previous: UILabel?
+        
+        // about to use the anchor method
+        // looping over all the labels --> giving them the same width as main view and height of exactly 88 points
+        
+        for label in [label1, label2, label3, label4,label5] {
+            label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            
+            // set the current label as 10 points below bottom of previous
+            if let previous = previous {
+                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+            }
+            
+            // previous label become the current one
+            previous = label
+            
         }
-        
-        let metrics = ["labelHeight": 88]
-        // verical
-        // - means space --> 10 points by def
-        // no pipe at the end. just leaves white space
-        // == 88 means size must be 88 points
-        // - space at end of screen must be 10 points or greater near end of screen -
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight@999)]-[label2(==label1)]-[label3(==label1)]-[label4(==label1)]-[label5(==label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
-        
-        
     }
 
 
