@@ -82,6 +82,10 @@ class ViewController: UIViewController {
             // set the current label as 10 points below bottom of previous
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+            } else {
+                // this is the top label
+                // put top label directly against the top anchor for the phone!!!
+                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
             }
             
             // previous label become the current one
