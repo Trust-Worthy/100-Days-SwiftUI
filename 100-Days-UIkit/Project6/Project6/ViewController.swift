@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         let viewsDictionary = ["label1": label1, "label2":label2,"label3":label3,"label4": label4, "label5":label5]
         
         // visual format language VFL
+        // horizonal
         for label in viewsDictionary.keys {
             // view = main view for main view controller
             // add Constraints adds the contraints to the view
@@ -60,7 +61,10 @@ class ViewController: UIViewController {
             view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
         }
         
-        
+        // verical
+        // - means space --> 10 points by def
+        // no pipe at the end. just leaves white space
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1]-[label2]-[label3]-[label4]-[label5]", options: [], metrics: nil, views: viewsDictionary))
     }
 
 
