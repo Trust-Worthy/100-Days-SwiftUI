@@ -10,5 +10,5 @@ import Foundation
 
 struct Petitions: Codable {
     // only property also conforms to codeable based on the petition json data
-    var result: [Petition]
+    var results: [Petition]
 }

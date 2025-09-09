@@ -9,9 +9,10 @@ import Foundation
 
 
 struct Petition: Codable {
-    var titleString: String
-    var bodyString: String
+    var title: String
+    var body: String
     var signatureCount: Int
+    
     
 }
 
