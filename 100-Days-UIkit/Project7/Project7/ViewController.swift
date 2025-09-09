@@ -15,7 +15,15 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let urlString = "https://hackingwithswift.com/samples/petitions-1.json"
         
+        if let url = URL(string: urlString) {
+            // Data can accept any binary data
+            if let data: Data = try? Data(contentsOf: url) {
+                // Ok to parse data
+                
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
