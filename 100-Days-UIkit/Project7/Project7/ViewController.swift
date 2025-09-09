@@ -2,18 +2,20 @@
 //  ViewController.swift
 //  Project7
 //
-//  Created by Jonathan Bateman on 9/9/25.
+//  Created by Trust-Worthy on 9/9/25.
 //
 
 import UIKit
 
 class ViewController: UITableViewController {
     
-    var petitions = [String]()
+    // array of custom type
+    var petitions = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
