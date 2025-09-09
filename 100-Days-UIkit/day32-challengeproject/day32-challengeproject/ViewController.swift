@@ -24,6 +24,14 @@ class ViewController: UITableViewController {
         
     }
     
+    private func shareShoppingList() {
+        let list = shoppingList.joined(separator: "\n")
+        
+        let av = UIActivityViewController(activityItems: [list], applicationActivities: nil)
+        
+        present(av, animated: true)
+    }
+    
     private func addShoppingListItem(_ item: String) {
         
         shoppingList.insert(item, at:0)
