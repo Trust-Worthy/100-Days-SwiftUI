@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             // Update previous for the next loop
             previous = label
             
-            UIsaf
+            
            
         }
         
