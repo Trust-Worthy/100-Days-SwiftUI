@@ -19,8 +19,17 @@ class ViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(clearShoppingList))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addShoppingListItem))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptShoppingListItem))
         
+        
+    }
+    
+    private func addShoppingListItem(_ item: String) {
+        
+        shoppingList.insert(item, at:0)
+        let indexPath = IndexPath(row: 0, section: 0)
+        // helps with animation
+        tableView.insertRows(at: [indexPath], with: .automatic)
         
     }
     
@@ -40,14 +49,28 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    @objc private func addShoppingListItem() {
+    // MARK: - Selector Methods
+    
+    @objc private func promptShoppingListItem() {
         
+        let ac = UIAlertController(title: "Add Item", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        let submittedItem = UIAlertAction(title: "Add Item",style: .default) {
+            [weak self, weak ac] _ in
+            
+            guard let answer = ac?.textFields?[0].text else {return }
+            self?.addShoppingListItem(answer)
+        }
         
+        ac.addAction(submittedItem)
+        present(ac, animated: true)
         
     }
     
     @objc private func clearShoppingList() {
         
+        shoppingList.removeAll()
+        tableView.reloadData()
     }
     
    
