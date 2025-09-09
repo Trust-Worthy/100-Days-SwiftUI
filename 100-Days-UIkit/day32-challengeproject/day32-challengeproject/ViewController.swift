@@ -19,18 +19,21 @@ class ViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(clearShoppingList))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptShoppingListItem))
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptShoppingListItem)),
+            UIBarButtonItem(
+                        barButtonSystemItem: .action,
+                        target: self,
+                        action: #selector(shareShoppingList))
+
+        ]
+        
+     
         
         
     }
     
-    private func shareShoppingList() {
-        let list = shoppingList.joined(separator: "\n")
-        
-        let av = UIActivityViewController(activityItems: [list], applicationActivities: nil)
-        
-        present(av, animated: true)
-    }
     
     private func addShoppingListItem(_ item: String) {
         
@@ -80,6 +83,15 @@ class ViewController: UITableViewController {
         shoppingList.removeAll()
         tableView.reloadData()
     }
+    
+    @objc private func shareShoppingList() {
+        let list = shoppingList.joined(separator: "\n")
+        
+        let av = UIActivityViewController(activityItems: [list], applicationActivities: nil)
+        
+        present(av, animated: true)
+    }
+    
     
    
 
