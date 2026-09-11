@@ -1,20 +1,64 @@
 import Cocoa
 
-let number = 0.1 + 0.2
-print(number)
+func greetUser() -> Void {
+    print("Hi there!")
+}
 
-let a = 1
-let b = 2.0
-let c = Double(a) + b
+greetUser()
 
-let double1 = 3.1
-let double2 = 3131.3131
-let double3 = 3.0
-let int1 = 3
+var greetCopy: () -> Void = greetUser
 
-var name = "Nicholas Cage"
-name = "John Travolta"
+greetCopy()
 
-var rating = 5.0
-rating *= 2
 
+let sayHello = { (name: String) -> String in
+    "Hi \(name)!"
+}
+
+sayHello("Naruto")
+
+func getUserData(for id: Int) -> String {
+    if id == 1989 {
+        return "Taylor Swift"
+    } else {
+        return "Anonymous"
+    }
+}
+
+let data: (Int) -> String = getUserData
+let user = data(1989)
+print(user)
+
+
+
+let team = ["Gloria","Suzanne","Piper","Tiffany","Tasha"]
+
+let sortedTeam = team.sorted()
+print(sortedTeam)
+
+// should return true if name 1 comes before name 2
+func captainFirstSorted(name1: String, name2: String) -> Bool {
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
+    }
+    // otherwise do a reg sort
+    return name1 < name2
+}
+
+//let captainFirstTeam = team.sorted(by: captainFirstSorted)
+//print(captainFirstTeam)
+
+
+let captainFirstTeam = team.sorted(by: { (name1: String, name2: String) -> Bool in
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
+    }
+    // otherwise do a reg sort
+    return name1 < name2
+})
+
+print(captainFirstTeam)
