@@ -1,64 +1,32 @@
 import Cocoa
 
-func greetUser() -> Void {
-    print("Hi there!")
-}
-
-greetUser()
-
-var greetCopy: () -> Void = greetUser
-
-greetCopy()
-
-
-let sayHello = { (name: String) -> String in
-    "Hi \(name)!"
-}
-
-sayHello("Naruto")
-
-func getUserData(for id: Int) -> String {
-    if id == 1989 {
-        return "Taylor Swift"
-    } else {
-        return "Anonymous"
+struct School {
+    static var studentCount = 0
+    
+    static func add(student: String) {
+        print("\(student) joined the school")
+        studentCount += 1
     }
 }
 
-let data: (Int) -> String = getUserData
-let user = data(1989)
-print(user)
+
+School.add(student: "Biggy Smalls")
+print(School.studentCount)
 
 
-
-let team = ["Gloria","Suzanne","Piper","Tiffany","Tasha"]
-
-let sortedTeam = team.sorted()
-print(sortedTeam)
-
-// should return true if name 1 comes before name 2
-func captainFirstSorted(name1: String, name2: String) -> Bool {
-    if name1 == "Suzanne" {
-        return true
-    } else if name2 == "Suzanne" {
-        return false
-    }
-    // otherwise do a reg sort
-    return name1 < name2
+struct AppData {
+    static let version =  "1.3 beta 2"
+    static let saveFilename = "settings.json"
+    static let homeURL = "https://www.realxreal.app"
 }
 
-//let captainFirstTeam = team.sorted(by: captainFirstSorted)
-//print(captainFirstTeam)
+
+struct Employee {
+    let username: String
+    let password: String
+    
+    static let example = Employee(username: "testtest", password: "fakepassword")
+}
 
 
-let captainFirstTeam = team.sorted(by: { (name1: String, name2: String) -> Bool in
-    if name1 == "Suzanne" {
-        return true
-    } else if name2 == "Suzanne" {
-        return false
-    }
-    // otherwise do a reg sort
-    return name1 < name2
-})
-
-print(captainFirstTeam)
+Employee.example
