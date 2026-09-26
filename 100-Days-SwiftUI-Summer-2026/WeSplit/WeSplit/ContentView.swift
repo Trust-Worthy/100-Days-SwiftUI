@@ -8,14 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var name = ""
+    @State private var checkAmount: Double = 0.0
+    @State private var numberOfPeople: Int  = 2
+    @State private var tipPercentage: Int = 20
+    
+    let tipPercentages: [Int] = [10,15,20,25,0]
+    
     var body: some View {
-        Form {
-            TextField("Enter your name", text: $name) // two way binding
-            Text("Your name is \(name)") // just read the val
-        }
         
-       
+        NavigationStack {
+            
+            Form {
+                
+                // Amount & Number of people
+                Section {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .keyboardType(.decimalPad)
+                    
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2..<100) {
+                            Text("\($0) people")
+                        }
+                    }
+                }
+                
+                // 
+                Section {
+                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                }
+            }
+            .navigationTitle("WeSplit")
+        }
     }
 }
 
